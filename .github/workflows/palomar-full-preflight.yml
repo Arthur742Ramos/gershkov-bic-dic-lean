@@ -22,7 +22,7 @@ jobs:
       repository: Arthur742Ramos/gershkov-bic-dic-lean
       commit: cc7dd990edab0d29b02a751350446e11d2b9b9a4
       pipeline_commit: 65f0154ed776cd26c224254aa57b379137f28b0d
-      request_id: gershkov-cc7dd99-full
+      request_id: gershkov0001
       mode: full
       execution_profile: palomar-standard-v1
       options: '{"comparator_config_path":"comparator.json","formalization_metadata_path":"formalization.yaml","authorization_relationship":"I am a responsible author or maintainer"}'
