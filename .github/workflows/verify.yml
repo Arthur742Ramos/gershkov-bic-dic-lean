@@ -2,6 +2,7 @@ name: Lean and three-kernel proof verification
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 

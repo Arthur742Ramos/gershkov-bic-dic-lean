@@ -1,0 +1,28 @@
+name: Palomar full mechanical preflight
+run-name: Palomar full preflight for 0e1bed1
+
+on:
+  push:
+    branches: [palomar-full-preflight-0e1bed1]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gershkov-full-preflight-0e1bed1
+  cancel-in-progress: false
+
+jobs:
+  # This driver branch is separate from the immutable submitted source.
+  # Both workflow and pipeline are pinned to the same current official revision.
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@65f0154ed776cd26c224254aa57b379137f28b0d
+    with:
+      repository: Arthur742Ramos/gershkov-bic-dic-lean
+      commit: 0e1bed171ab66b194d5ee28ac02818b9a7bc5073
+      pipeline_commit: 65f0154ed776cd26c224254aa57b379137f28b0d
+      request_id: gershkov0002
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path":"comparator.json","formalization_metadata_path":"formalization.yaml","authorization_relationship":"I am a responsible author or maintainer"}'
