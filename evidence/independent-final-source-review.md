@@ -171,6 +171,22 @@ The normalized environment audit log was rechecked and its refreshed checksum
 recorded: it still covers exactly 216 unique constants, all 158 explicit names,
 and only the three permitted axioms.
 
+The hosted proof workflow was subsequently strengthened at its evidence-recording
+step. It reads the manifest from the exact Git checkout with
+`git show HEAD:evidence/verification-manifest.json` and requires parsed equality
+with the post-verification working-tree manifest before checking each listed
+file's SHA256 or recording hosted success. This prevents `check_package.py
+--record`, which legitimately refreshes local development evidence, from silently
+blessing source or Lake manifest drift introduced during CI dependency setup.
+Equality covers the entire manifest, including source inventory and counts;
+the subsequent hash loop ties the actual resulting files to those committed
+expectations. The workflow itself is one of the hashed source files. The reviewer
+checked the changed Python block's syntax, assertion ordering and complete current
+manifest/file parity without running a build. This is an appropriate exact-source
+reproduction guard for the reviewed workflow; official Palomar provenance and
+confinement remain separate checks. Previous hosted runs do not cover this
+workflow revision: both fresh hosted workflows must validate its new exact commit.
+
 The rewritten README's binder table agrees with the actual main statement,
 including unbounded heterogeneous cardinalities, arbitrary real normalized
 positive support masses, nonnegative slopes, arbitrary constants and unrestricted

@@ -48,5 +48,12 @@
     "change": "Root name only: bayes_correlated_equilibrium to gershkov_equivalence",
     "dependency_revisions_changed": false,
     "mathematical_or_contract_source_changed": false
+  },
+  "hosted_workflow_guard_review": {
+    "workflow": ".github/workflows/verify.yml",
+    "workflow_sha256": "f1ac1711838aeaa271da0ea52f12762c096bac117899f8414df45202beb2449e",
+    "verification_manifest_sha256": "8f21fac9554c7824d07f4a92b749d00a4873f06548956bbb1f4a07e859797e23",
+    "checks": "Parsed manifest equals git show HEAD manifest before actual file hashes and hosted success recording; reviewed syntax and manifest parity",
+    "fresh_hosted_runs_required": true
   }
 }

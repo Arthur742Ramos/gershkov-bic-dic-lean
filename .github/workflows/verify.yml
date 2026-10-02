@@ -75,9 +75,13 @@ jobs:
       - name: Record exact hosted evidence
         run: |
           python3 - <<'PY'
-          import hashlib, json, os
+          import hashlib, json, os, subprocess
           from pathlib import Path
           saved = json.loads(Path('evidence/verification-manifest.json').read_text())
+          committed = json.loads(subprocess.run(
+              ['git', 'show', 'HEAD:evidence/verification-manifest.json'],
+              check=True, capture_output=True, text=True).stdout)
+          assert saved == committed, 'Verification manifest drift from exact committed source'
           for name, expected in saved['source_files_sha256'].items():
               assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name
           log = Path('evidence/final-comparator.log').read_text()

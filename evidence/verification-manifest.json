@@ -1,7 +1,7 @@
 {
   "source_files_sha256": {
     ".github/workflows/render.yml": "72b1f0dd403451267251658d8578c3ccecf0b550d5c81faf69be211c3f56b011",
-    ".github/workflows/verify.yml": "f776d0d994bcbf8cdc36ce005662ad2a5246287ea9471ed20a61383ff9f42b94",
+    ".github/workflows/verify.yml": "f1ac1711838aeaa271da0ea52f12762c096bac117899f8414df45202beb2449e",
     "Audit.lean": "fa0c04f6f888f6c633035c9973549777d787ff5772c97dce5aa6fa515cde889c",
     "CITATION.cff": "c458f9048917e4d007d965e2e7723a94b007a21dccd325c6630270b61f4344f2",
     "Challenge.lean": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
