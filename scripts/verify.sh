@@ -35,5 +35,6 @@ for kernel in ('Lean default', 'nanoda', 'con-ron'):
 print(log)
 PY
 python3 scripts/check_package.py
-git diff --check
+# Preserve raw regenerated tool output; whitespace lint applies to authored files.
+git diff --check -- . ':!evidence/*.log'
 echo 'Proof/package/kernel checks complete; exact pinned rendering and hosted Linux checks remain separate gates.'

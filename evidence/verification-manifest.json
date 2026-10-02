@@ -31,7 +31,7 @@
     "scripts/make_challenge.py": "b7f93eca0c736eae9a9cc92bb51cd95d2929d1db3f46bafbc076daefbbeb0a3d",
     "scripts/render_local.py": "f5c4b3251a99d35b07db70a4d8b924590eef3187765cedd15b1a703422e34d0f",
     "scripts/verification_config.py": "9c7af9d304d552ea485e6823451bc1675e3a4f31214a8a86a9e6d160d55bce5a",
-    "scripts/verify.sh": "b4f1effd7dbb972ad43c07ff2358777e4de1312fa04c43934ef94870e2ddccbe",
+    "scripts/verify.sh": "319931526ea0f2f56a8b3a0047bb52e52046c3364f7ed6acc49bba81f1d89fd9",
     "scripts/verify_metadata.py": "ef0af5d3087bfb5aaf29e127408bfe976c35f510bcc13c3425107cac45a622ae"
   },
   "authored_declaration_count": 158,

@@ -187,6 +187,22 @@ reproduction guard for the reviewed workflow; official Palomar provenance and
 confinement remain separate checks. Previous hosted runs do not cover this
 workflow revision: both fresh hosted workflows must validate its new exact commit.
 
+An initial hosted proof job subsequently completed its actual audits and three
+kernel checks, then failed only the final whitespace check on raw regenerated
+Lean diagnostic logs. The packaging repair changes that final command to
+`git diff --check -- . ':!evidence/*.log'`. This preserves raw tool output while
+retaining whitespace checks on authored Lean, scripts, workflows, metadata and
+review documents. The reviewer examined the two-line diff and exercised Git's
+pathspec on the tracked tree: every excluded path lies under `evidence/` and
+ends in `.log`, while all core sources, both exports, verification tooling,
+workflow, manifest and this review remain included. Shell syntax and current
+manifest hash parity were checked without running a build. All proof, explicit
+and environment axiom audits, selected-definition checks, three actual kernel
+verdict requirements, and the later committed-manifest equality/file-hash guard
+remain unchanged. This repair changes no mathematical library or contract.
+The failed earlier job is not called a passing workflow; both hosted workflows
+must pass on the new immutable commit containing this repair.
+
 The rewritten README's binder table agrees with the actual main statement,
 including unbounded heterogeneous cardinalities, arbitrary real normalized
 positive support masses, nonnegative slopes, arbitrary constants and unrestricted

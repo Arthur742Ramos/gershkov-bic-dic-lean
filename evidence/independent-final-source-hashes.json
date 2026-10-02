@@ -19,7 +19,8 @@
     "lakefile.toml": "694e08a6ab696a612bdb0eeba8339c5ab04e9fe598f1cf8f654c6c652e62963f",
     "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
     "scripts/EnvironmentAudit.lean": "110cf279d55b9c02537a57d914a4c8ff9ada63011940c00843806a18e911e77b",
-    "scripts/make_challenge.py": "b7f93eca0c736eae9a9cc92bb51cd95d2929d1db3f46bafbc076daefbbeb0a3d"
+    "scripts/make_challenge.py": "b7f93eca0c736eae9a9cc92bb51cd95d2929d1db3f46bafbc076daefbbeb0a3d",
+    "scripts/verify.sh": "319931526ea0f2f56a8b3a0047bb52e52046c3364f7ed6acc49bba81f1d89fd9"
   },
   "documentation_files_sha256": {
     "README.md": "eb2bb0add7e5020d1afb28e70508a42c352f36818432e07ab82dc41b44a447c1",
@@ -52,8 +53,15 @@
   "hosted_workflow_guard_review": {
     "workflow": ".github/workflows/verify.yml",
     "workflow_sha256": "f1ac1711838aeaa271da0ea52f12762c096bac117899f8414df45202beb2449e",
-    "verification_manifest_sha256": "8f21fac9554c7824d07f4a92b749d00a4873f06548956bbb1f4a07e859797e23",
+    "verification_manifest_sha256": "b00701cbbe8e4a620220f359e1cc4b279eafa3be9d932816dea9882a42e68b1e",
     "checks": "Parsed manifest equals git show HEAD manifest before actual file hashes and hosted success recording; reviewed syntax and manifest parity",
+    "fresh_hosted_runs_required": true
+  },
+  "raw_log_whitespace_repair_review": {
+    "script": "scripts/verify.sh",
+    "script_sha256": "319931526ea0f2f56a8b3a0047bb52e52046c3364f7ed6acc49bba81f1d89fd9",
+    "pathspec": "git diff --check -- . ':!evidence/*.log'",
+    "scope": "Only evidence .log files excluded; all proof, audit, kernel and committed-source guards unchanged",
     "fresh_hosted_runs_required": true
   }
 }
