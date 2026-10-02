@@ -3,13 +3,13 @@
   "scope": "Local macOS reproduction; no Linux sandbox or hosted workflow claim",
   "policy_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
   "verso_commit": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
-  "challenge_sha256": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
+  "challenge_sha256": "078f520dddb7d57e482d9c33e1cf005cc95553ed1281611711c89b133cbc56be",
   "core_audit_source_sha256": "47ee22447f312db83e764e8eab015a0db49b7317d2fccb4314f52b6a6cad2e3d",
   "core_audit_executable_sha256": "ad425e3ce14f17a3e9d190fb3b4953eee3d3bc3692b77343cfb0b01bec3b3151",
-  "trusted_audit_declarations": 32,
+  "trusted_audit_declarations": 29,
   "html_files": {
     "search/index.html": 31467,
-    "Challenge/index.html": 437749
+    "Challenge/index.html": 382427
   },
   "per_html_limit_bytes": 8388608
 }

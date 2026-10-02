@@ -1,5 +1,6 @@
+nice: setpriority: Operation not permitted
 Selected reference definitions have only standard axioms; theorem reference holes audited separately
-Package and all 158 explicit authored declaration axiom checks passed
+Package and all 155 explicit authored declaration axiom checks passed
 WARNING: Sandbox disabled, this run is not trustworthy.
 Resolving dependencies
 Building Challenge
@@ -7,11 +8,8 @@ Building Challenge
 warning: Challenge.lean:145:8: declaration uses `sorry`
 warning: Challenge.lean:168:8: declaration uses `sorry`
 warning: Challenge.lean:184:8: declaration uses `sorry`
-warning: Challenge.lean:196:8: declaration uses `sorry`
-warning: Challenge.lean:206:8: declaration uses `sorry`
-warning: Challenge.lean:217:8: declaration uses `sorry`
 Build completed successfully (3093 jobs).
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GGKMS.finite_bayesian_dominant_equivalence, GGKMS.weighted_monotone_lifting, GGKMS.minimizer_monotone, GGKMS.Transfers.scalarIC_iff_monotone_adjacent, GGKMS.expectation_on_support, GGKMS.product_expectation_on_support, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam, GGKMS.value, GGKMS.Feasible, GGKMS.energy, GGKMS.Profile, GGKMS.Opponents, GGKMS.pack, GGKMS.joint, GGKMS.opponentMass, GGKMS.SupportPrior, GGKMS.interim, GGKMS.exAnte, GGKMS.slope, GGKMS.Matches, GGKMS.Types, GGKMS.modified, GGKMS.payoff, GGKMS.interimPayoff, GGKMS.BIC, GGKMS.DIC, GGKMS.modifiedInterim, GGKMS.socialSurplus, GGKMS.Transfers.ScalarIC, GGKMS.Transfers.AdjacentIC, GGKMS.PositiveSupport, GGKMS.positiveSupportFintype, GGKMS.positiveSupportDecidableEq] from Challenge
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GGKMS.finite_bayesian_dominant_equivalence, GGKMS.weighted_monotone_lifting, GGKMS.minimizer_monotone, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam, GGKMS.value, GGKMS.Feasible, GGKMS.energy, GGKMS.Profile, GGKMS.Opponents, GGKMS.pack, GGKMS.joint, GGKMS.opponentMass, GGKMS.SupportPrior, GGKMS.interim, GGKMS.exAnte, GGKMS.slope, GGKMS.Matches, GGKMS.Types, GGKMS.modified, GGKMS.payoff, GGKMS.interimPayoff, GGKMS.BIC, GGKMS.DIC, GGKMS.modifiedInterim, GGKMS.socialSurplus, GGKMS.Transfers.ScalarIC, GGKMS.Transfers.AdjacentIC, GGKMS.PositiveSupport, GGKMS.positiveSupportFintype, GGKMS.positiveSupportDecidableEq] from Challenge
 Building Solution
 ⚠ [3092/3103] Replayed Gershkov.Smoothing
 warning: Gershkov/Smoothing.lean:43:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_left`:
@@ -211,7 +209,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [DecidableEq A] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: Gershkov/Support.lean:39:2: Try this:
+warning: Gershkov/Support.lean:39:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -219,7 +217,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: Gershkov/Support.lean:55:2: Try this:
+warning: Gershkov/Support.lean:55:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -238,11 +236,11 @@ consider restructuring your `variable` declarations so that the variables are no
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
 Build completed successfully (3103 jobs).
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GGKMS.finite_bayesian_dominant_equivalence, GGKMS.weighted_monotone_lifting, GGKMS.minimizer_monotone, GGKMS.Transfers.scalarIC_iff_monotone_adjacent, GGKMS.expectation_on_support, GGKMS.product_expectation_on_support, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam, GGKMS.value, GGKMS.Feasible, GGKMS.energy, GGKMS.Profile, GGKMS.Opponents, GGKMS.pack, GGKMS.joint, GGKMS.opponentMass, GGKMS.SupportPrior, GGKMS.interim, GGKMS.exAnte, GGKMS.slope, GGKMS.Matches, GGKMS.Types, GGKMS.modified, GGKMS.payoff, GGKMS.interimPayoff, GGKMS.BIC, GGKMS.DIC, GGKMS.modifiedInterim, GGKMS.socialSurplus, GGKMS.Transfers.ScalarIC, GGKMS.Transfers.AdjacentIC, GGKMS.PositiveSupport, GGKMS.positiveSupportFintype, GGKMS.positiveSupportDecidableEq] from Solution
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, GGKMS.finite_bayesian_dominant_equivalence, GGKMS.weighted_monotone_lifting, GGKMS.minimizer_monotone, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam, GGKMS.value, GGKMS.Feasible, GGKMS.energy, GGKMS.Profile, GGKMS.Opponents, GGKMS.pack, GGKMS.joint, GGKMS.opponentMass, GGKMS.SupportPrior, GGKMS.interim, GGKMS.exAnte, GGKMS.slope, GGKMS.Matches, GGKMS.Types, GGKMS.modified, GGKMS.payoff, GGKMS.interimPayoff, GGKMS.BIC, GGKMS.DIC, GGKMS.modifiedInterim, GGKMS.socialSurplus, GGKMS.Transfers.ScalarIC, GGKMS.Transfers.AdjacentIC, GGKMS.PositiveSupport, GGKMS.positiveSupportFintype, GGKMS.positiveSupportDecidableEq] from Solution
 Running con-ron kernel on solution
 con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
 con-ron: 2 declarations hoisted ahead of the pinned Nat operations they ground: Nat.mul._f, Nat.mul
-con-ron: accepted 14002 declarations (--verified)
+con-ron: accepted 13975 declarations (--verified)
 con-ron kernel accepts the solution
 Running nanoda kernel on solution
 nanoda kernel accepts the solution
@@ -250,5 +248,5 @@ Running Lean default kernel on solution
 Lean default kernel accepts the solution
 Your solution is okay!
 
-Package and all 158 explicit authored declaration axiom checks passed
+Package and all 155 explicit authored declaration axiom checks passed
 Proof/package/kernel checks complete; exact pinned rendering and hosted Linux checks remain separate gates.

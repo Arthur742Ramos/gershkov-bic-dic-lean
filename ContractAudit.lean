@@ -8,12 +8,6 @@ set_option pp.explicit true
 #print GGKMS.weighted_monotone_lifting
 #check @GGKMS.minimizer_monotone
 #print GGKMS.minimizer_monotone
-#check @GGKMS.Transfers.scalarIC_iff_monotone_adjacent
-#print GGKMS.Transfers.scalarIC_iff_monotone_adjacent
-#check @GGKMS.expectation_on_support
-#print GGKMS.expectation_on_support
-#check @GGKMS.product_expectation_on_support
-#print GGKMS.product_expectation_on_support
 #check @GGKMS.value
 #print GGKMS.value
 #check @GGKMS.Feasible

@@ -156,6 +156,3 @@ public import Solution
 #print axioms GGKMS.finite_bayesian_dominant_equivalence
 #print axioms GGKMS.weighted_monotone_lifting
 #print axioms GGKMS.minimizer_monotone
-#print axioms GGKMS.Transfers.scalarIC_iff_monotone_adjacent
-#print axioms GGKMS.expectation_on_support
-#print axioms GGKMS.product_expectation_on_support

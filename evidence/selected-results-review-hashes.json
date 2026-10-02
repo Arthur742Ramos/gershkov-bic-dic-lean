@@ -1,7 +1,12 @@
 {
+  "review_date": "2026-10-02",
+  "review_scope": "Independent source-only selected-result packaging review; no proof/build/kernel/render/hosted jobs run by this reviewer",
+  "public_baseline_commit": "cc7dd990edab0d29b02a751350446e11d2b9b9a4",
+  "report": "evidence/selected-results-review.md",
   "source_files_sha256": {
     ".github/workflows/render.yml": "72b1f0dd403451267251658d8578c3ccecf0b550d5c81faf69be211c3f56b011",
     ".github/workflows/verify.yml": "f1ac1711838aeaa271da0ea52f12762c096bac117899f8414df45202beb2449e",
+    ".gitignore": "cc773ccffc3c86c87db732708a2ef34b1ee6e0862f0439f5f3a2465312a353b0",
     "Audit.lean": "0b7c0c6f64d9a1162ec77f9498412152ca7b39281689afcd094c56670c7d5765",
     "CITATION.cff": "c458f9048917e4d007d965e2e7723a94b007a21dccd325c6630270b61f4344f2",
     "Challenge.lean": "078f520dddb7d57e482d9c33e1cf005cc95553ed1281611711c89b133cbc56be",
@@ -20,6 +25,14 @@
     "README.md": "de85b2e1b72d394ee37f8aed8bf2b0b87b7c549edb2b90b76b8104eb6fa03fe1",
     "Solution.lean": "eea878138b4a16bb980b14b9736346a1812835911ac7d6e15f2f037fc53e7390",
     "comparator.json": "5fca6b463bcc61ef697fcd29a2a2602ae8cc040d252979e2b5a8a53db1044808",
+    "evidence/authored-declarations.json": "fcb1d177d4dd28a1e5f654f33aebea61a4766e217fe9f0028b1d1c856cec32e0",
+    "evidence/exact-source-and-gates.md": "6ad7f260dfa115545453cf1c41b11273f0e751c39027bfc6a05dc1985735c920",
+    "evidence/independent-final-mathematical-review.md": "0d01b5b14ca5ea91c1a346862d468e9bd55f54a4c22a4f4a7926c4ad82fe48db",
+    "evidence/independent-final-source-hashes.json": "3f9ad9ee588d0f5a4755c2d989712cf04058a0db912810f203f0ff1aa11d2724",
+    "evidence/independent-final-source-review.md": "ffd01685bf53e943f7dae38efa2bfe2089e4a565c4c92982f2f3b600c4ac1e59",
+    "evidence/independent-mathematical-review.md": "97195a49d65f0fc2f9684efef504a6342da4819d2ebbd0c3bfde03fc0b22b78c",
+    "evidence/preimplementation-review.md": "168d39be8dddf4f09e6b7d44f85f814b60fa750c02d1e1810b3953f735517259",
+    "evidence/selected-results-review.md": "059d7c9fe896689d2d469ab04d4ca96adff40063dc71d3eb7f7e65b271ec43e5",
     "formalization.yaml": "2e35b84835a7277c1188c0c66c3d4566b9796fe880c0c1cd63fa37d4e941a585",
     "lake-manifest.json": "bacb9e787901cada5dea12566d642c7ad644c497925ff8d16e7771532da30bc0",
     "lakefile.toml": "694e08a6ab696a612bdb0eeba8339c5ab04e9fe598f1cf8f654c6c652e62963f",
@@ -34,41 +47,49 @@
     "scripts/verify.sh": "319931526ea0f2f56a8b3a0047bb52e52046c3364f7ed6acc49bba81f1d89fd9",
     "scripts/verify_metadata.py": "ef0af5d3087bfb5aaf29e127408bfe976c35f510bcc13c3425107cac45a622ae"
   },
-  "authored_declaration_count": 155,
-  "environment_constant_count": 213,
+  "unchanged_library_files": [
+    "Gershkov.lean",
+    "Gershkov/Compactness.lean",
+    "Gershkov/Equivalence.lean",
+    "Gershkov/Examples.lean",
+    "Gershkov/Lifting.lean",
+    "Gershkov/Mechanism.lean",
+    "Gershkov/Model.lean",
+    "Gershkov/Smoothing.lean",
+    "Gershkov/Support.lean",
+    "Gershkov/Transfers.lean"
+  ],
   "selected_theorems": [
     "GGKMS.finite_bayesian_dominant_equivalence",
     "GGKMS.weighted_monotone_lifting",
     "GGKMS.minimizer_monotone"
   ],
-  "selected_definitions": [
-    "GGKMS.value",
-    "GGKMS.Feasible",
-    "GGKMS.energy",
-    "GGKMS.Profile",
-    "GGKMS.Opponents",
-    "GGKMS.pack",
-    "GGKMS.joint",
-    "GGKMS.opponentMass",
-    "GGKMS.SupportPrior",
-    "GGKMS.interim",
-    "GGKMS.exAnte",
-    "GGKMS.slope",
-    "GGKMS.Matches",
-    "GGKMS.Types",
-    "GGKMS.modified",
-    "GGKMS.payoff",
-    "GGKMS.interimPayoff",
-    "GGKMS.BIC",
-    "GGKMS.DIC",
-    "GGKMS.modifiedInterim",
-    "GGKMS.socialSurplus",
-    "GGKMS.Transfers.ScalarIC",
-    "GGKMS.Transfers.AdjacentIC",
-    "GGKMS.PositiveSupport",
-    "GGKMS.positiveSupportFintype",
-    "GGKMS.positiveSupportDecidableEq"
+  "removed_selected_theorems": [
+    "GGKMS.Transfers.scalarIC_iff_monotone_adjacent",
+    "GGKMS.expectation_on_support",
+    "GGKMS.product_expectation_on_support"
   ],
-  "lean": "leanprover/lean4:v4.35.0-rc2",
-  "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+  "selected_definition_count": 26,
+  "explicit_authored_declaration_count": 155,
+  "lightweight_checks": {
+    "all_library_bytes_equal_baseline": true,
+    "prior_public_library_review_hashes_match": true,
+    "surviving_wrapper_contracts_contexts_proofs_and_definitions_equal_baseline": true,
+    "generator_exact_byte_parity_in_memory": true,
+    "generated_audit_and_inventory_exact_parity": true,
+    "all_recorded_inventory_source_hashes_match": true,
+    "metadata_selected_alignment_matches_comparator": true,
+    "textual_library_solution_no_admissions_or_custom_axioms": true,
+    "challenge_placeholders_exactly_three": true,
+    "scoped_whitespace_check_passed": true
+  },
+  "separate_gates_not_certified_by_this_review": [
+    "Lean elaboration/build",
+    "environment-based transitive axiom audit",
+    "official Comparator and default-kernel/NanoDa/con-ron replay",
+    "pinned Verso rendering and sanitizer",
+    "exact-commit hosted Linux verification and confinement",
+    "production intake readiness"
+  ],
+  "validation_evidence_policy": "Validation logs and mutable validation manifests are excluded from this source-review binding; older snapshots remain historical and fresh exact-candidate evidence must be assessed separately."
 }

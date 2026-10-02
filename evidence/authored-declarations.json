@@ -929,28 +929,10 @@
       "kind": "theorem",
       "source": "Solution.lean",
       "line": 176
-    },
-    {
-      "name": "GGKMS.Transfers.scalarIC_iff_monotone_adjacent",
-      "kind": "theorem",
-      "source": "Solution.lean",
-      "line": 188
-    },
-    {
-      "name": "GGKMS.expectation_on_support",
-      "kind": "theorem",
-      "source": "Solution.lean",
-      "line": 198
-    },
-    {
-      "name": "GGKMS.product_expectation_on_support",
-      "kind": "theorem",
-      "source": "Solution.lean",
-      "line": 209
     }
   ],
   "sources_sha256": {
-    "Challenge.lean": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
+    "Challenge.lean": "078f520dddb7d57e482d9c33e1cf005cc95553ed1281611711c89b133cbc56be",
     "Gershkov/Compactness.lean": "8c4b0f7ef3766850d16e2da33fe3ae62af0d6bca77119a9cb4f6d14aba7a1397",
     "Gershkov/Equivalence.lean": "a70f03add72cd0d56b84568460ed2a341ddb09695d7c42657cdb111a6d03b620",
     "Gershkov/Examples.lean": "36826b0e0f064d91437039d358bbf4b95951f0b408b4625d5d1f654f60471813",
@@ -961,6 +943,6 @@
     "Gershkov/Support.lean": "3f120dd8fada000d65ebf1f46fe9c97f86344d6e8974b10c8c19550f01798b50",
     "Gershkov/Transfers.lean": "99ba8b78bf932b7ed0542fcc35ef4d5b4e92d7b7206d6879b4e56058ef2d1597",
     "Gershkov.lean": "b241b723bd9fcd3d20859f6719edbce4c0446a1292bbf6c3e4e80e6cf6f4a997",
-    "Solution.lean": "5ad7b50036780bb53f26b5a26a26e4d8ddc42025bdffa4a42ff7b24742bf899e"
+    "Solution.lean": "eea878138b4a16bb980b14b9736346a1812835911ac7d6e15f2f037fc53e7390"
   }
 }

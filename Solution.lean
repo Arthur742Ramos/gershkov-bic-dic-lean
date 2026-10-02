@@ -1,7 +1,7 @@
 module
 public import Gershkov
 
-/-! Exact finite GGKMS Theorem 2 and supporting contracts. All model and support
+/-! Exact finite GGKMS Theorem 2 and its weighted allocation contracts. All model and support
 definitions and named instances have genuine implementation bodies copied from
 the library. Every theorem below is proved by the complete implementation. Complete proofs are exported by Solution under GGKMS and developed
 under the distinct Gershkov namespace. Types are strictly ordered finite supports;
@@ -179,37 +179,5 @@ theorem minimizer_monotone (p : ∀ i, T i → ℝ) (hp : SupportPrior p)
     (hmin : ∀ q', Matches p a q' q₀ → energy (joint p) a q ≤ energy (joint p) a q') :
     ∀ i y, Monotone (fun t => value a q i (pack i t y)) := by
   exact Gershkov.minimizer_monotone p hp a q q₀ hq hmono hmin
-
-end GGKMS
-
-namespace GGKMS.Transfers
-
-
-theorem scalarIC_iff_monotone_adjacent {n : ℕ} {x v t : Fin (n + 1) → ℝ}
-    (hx : StrictMono x) : ScalarIC x v t ↔ Monotone v ∧ AdjacentIC x v t := by
-  exact Gershkov.Transfers.scalarIC_iff_monotone_adjacent hx
-
-end GGKMS.Transfers
-
-namespace GGKMS
-universe uA
-variable {A : Type uA} [Fintype A] [DecidableEq A]
-
-theorem expectation_on_support (w : A → ℝ) (hw : ∀ a, 0 ≤ w a) (f : A → ℝ) :
-    (∑ a : PositiveSupport w, w a * f a) = ∑ a, w a * f a := by
-  exact Gershkov.expectation_on_support w hw f
-
-end GGKMS
-
-namespace GGKMS
-universe uI uT
-variable {I : Type uI} [Fintype I] [DecidableEq I]
-variable {T : I → Type uT} [∀ i, Fintype (T i)] [∀ i, DecidableEq (T i)]
-
-theorem product_expectation_on_support (p : ∀ i, T i → ℝ)
-    (hp : ∀ i t, 0 ≤ p i t) (f : Profile T → ℝ) :
-    (∑ z : ∀ i, PositiveSupport (p i), (∏ i, p i (z i).val) * f (fun i => (z i).val)) =
-      exAnte p f := by
-  exact Gershkov.product_expectation_on_support p hp f
 
 end GGKMS

@@ -189,14 +189,14 @@ open Lean.Parser.Tactic in
 macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
   `(tactic| push $cfg:optConfig Not $[$loc]?)
 ```
-⚠ [3099/3103] Replayed Gershkov.Support
+⚠ [3098/3103] Replayed Gershkov.Support
 warning: Gershkov/Support.lean:20:0: automatically included section variable(s) unused in theorem `Gershkov.expectation_on_support`:
   [DecidableEq A]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
   omit [DecidableEq A] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: Gershkov/Support.lean:39:2: Try this:
+warning: Gershkov/Support.lean:39:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -204,7 +204,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: Gershkov/Support.lean:55:2: Try this:
+warning: Gershkov/Support.lean:55:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -222,4 +222,5 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [(i : I) → DecidableEq (T i)] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3102/3103] Built Solution (4.0s)
 Build completed successfully (3103 jobs).

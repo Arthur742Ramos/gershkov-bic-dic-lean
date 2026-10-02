@@ -196,7 +196,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [DecidableEq A] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: Gershkov/Support.lean:39:2: Try this:
+warning: Gershkov/Support.lean:39:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -204,7 +204,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: Gershkov/Support.lean:55:2: Try this:
+warning: Gershkov/Support.lean:55:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -226,7 +226,4 @@ Note: This linter can be disabled with `set_option linter.unusedSectionVars fals
 warning: Challenge.lean:145:8: declaration uses `sorry`
 warning: Challenge.lean:168:8: declaration uses `sorry`
 warning: Challenge.lean:184:8: declaration uses `sorry`
-warning: Challenge.lean:196:8: declaration uses `sorry`
-warning: Challenge.lean:206:8: declaration uses `sorry`
-warning: Challenge.lean:217:8: declaration uses `sorry`
 Build completed successfully (3106 jobs).

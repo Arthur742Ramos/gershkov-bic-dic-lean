@@ -1,4 +1,4 @@
-⚠ [104/184] Replayed Verso.Parser
+⚠ [118/184] Replayed Verso.Parser
 warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
 
 Hint: Use `constructor!` to apply the first matching constructor without this warning:
@@ -19,7 +19,7 @@ warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constr
 
 Hint: Use `constructor!` to apply the first matching constructor without this warning:
   [apply] constructor!
-⚠ [310/323] Replayed VersoLiterateMain
+⚠ [312/323] Replayed VersoLiterateMain
 warning: src/verso-literate/VersoLiterateMain.lean:15:0: 'Lean.Server.InfoUtils' has been deprecated: please replace this import by
 
 import Lean.Elab.InfoTree.Util
@@ -27,8 +27,5 @@ import Lean.Elab.InfoTree.Util
 warning: Challenge.lean:145:8: declaration uses `sorry`
 warning: Challenge.lean:168:8: declaration uses `sorry`
 warning: Challenge.lean:184:8: declaration uses `sorry`
-warning: Challenge.lean:196:8: declaration uses `sorry`
-warning: Challenge.lean:206:8: declaration uses `sorry`
-warning: Challenge.lean:217:8: declaration uses `sorry`
-✔ [3406/3407] Built PalomarChallengeRender/Challenge:literate (29s)
+✔ [3406/3407] Built PalomarChallengeRender/Challenge:literate (28s)
 Build completed successfully (3407 jobs).

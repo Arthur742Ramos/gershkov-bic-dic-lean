@@ -1,6 +1,6 @@
 """Generate compact exact contracts with genuine copied definition bodies.
 
-Challenge deliberately replaces only the six named reference theorem proofs.
+Challenge deliberately replaces only the three named reference theorem proofs.
 Solution copies the same definitions and proves the same headers by the complete
 Gershkov library. No theorem assumption or conclusion is rewritten.
 """
@@ -59,14 +59,6 @@ theorems = [
      'weighted_monotone_lifting', 'Gershkov.weighted_monotone_lifting p hp a q₀ hq₀ hmono'),
     ('Lifting', 'GGKMS', groups[1][2] + '\nvariable [∀ i, Preorder (T i)]',
      'minimizer_monotone', 'Gershkov.minimizer_monotone p hp a q q₀ hq hmono hmin'),
-    ('Transfers', 'GGKMS.Transfers', '', 'scalarIC_iff_monotone_adjacent',
-     'Gershkov.Transfers.scalarIC_iff_monotone_adjacent hx'),
-    ('Support', 'GGKMS', groups[4][2], 'expectation_on_support',
-     'Gershkov.expectation_on_support w hw f'),
-    ('Support', 'GGKMS', '''universe uI uT
-variable {I : Type uI} [Fintype I] [DecidableEq I]
-variable {T : I → Type uT} [∀ i, Fintype (T i)] [∀ i, DecidableEq (T i)]''',
-     'product_expectation_on_support', 'Gershkov.product_expectation_on_support p hp f'),
 ]
 imports = '''module
 public import Mathlib.Algebra.BigOperators.Field
@@ -79,9 +71,9 @@ public import Mathlib.Algebra.BigOperators.Fin
 public import Mathlib.Order.Fin.Basic
 '''
 intro = '''
-/-! Exact finite GGKMS Theorem 2 and supporting contracts. All model and support
+/-! Exact finite GGKMS Theorem 2 and its weighted allocation contracts. All model and support
 definitions and named instances have genuine implementation bodies copied from
-the library. Only the six named reference theorem proof bodies are intentional
+the library. Only the three named reference theorem proof bodies are intentional
 placeholders. Complete proofs are exported by Solution under GGKMS and developed
 under the distinct Gershkov namespace. Types are strictly ordered finite supports;
 arbitrary independent positive support masses are permitted. Null-label deletion
@@ -91,7 +83,7 @@ open scoped BigOperators
 '''
 challenge = imports + intro
 solution = 'module\npublic import Gershkov\n' + intro.replace(
-    'Only the six named reference theorem proof bodies are intentional\nplaceholders.', 'Every theorem below is proved by the complete implementation.')
+    'Only the three named reference theorem proof bodies are intentional\nplaceholders.', 'Every theorem below is proved by the complete implementation.')
 definition_names = []
 for file, namespace, context, names in groups:
     block = '\nnamespace ' + namespace + '\n' + context + '\n\n'

@@ -92,7 +92,6 @@ ENV-AUDIT Gershkov.Lifting Gershkov.weighted_monotone_lifting: [propext, Classic
 ENV-AUDIT Gershkov.Examples Gershkov.Examples.original_bic: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Smoothing Gershkov.mixPair: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Transfers Gershkov.Transfers.ScalarIC: [propext, Classical.choice, Quot.sound]
-ENV-AUDIT Solution GGKMS.Transfers.scalarIC_iff_monotone_adjacent: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Model Gershkov.interim_add: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Model Gershkov.joint_sum: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Solution GGKMS.weighted_monotone_lifting: [propext, Classical.choice, Quot.sound]
@@ -160,9 +159,7 @@ ENV-AUDIT Solution GGKMS.finite_bayesian_dominant_equivalence: [propext, Classic
 ENV-AUDIT Gershkov.Examples Gershkov.Examples.lifted._proof_4: [propext]
 ENV-AUDIT Solution GGKMS.positiveSupportDecidableEq: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Solution GGKMS.Feasible: [propext, Classical.choice, Quot.sound]
-ENV-AUDIT Solution GGKMS.product_expectation_on_support: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Transfers Gershkov.Transfers.transfer_zero: [propext, Classical.choice, Quot.sound]
-ENV-AUDIT Solution GGKMS.expectation_on_support: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Solution GGKMS.Types: []
 ENV-AUDIT Solution GGKMS.joint: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Examples Gershkov.Examples.original: [propext, Classical.choice, Quot.sound]
@@ -214,4 +211,4 @@ ENV-AUDIT Gershkov.Examples Gershkov.Examples.firstSlope.eq_1: [propext, Classic
 ENV-AUDIT Gershkov.Examples Gershkov.Examples.exAnte_on_probability: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Support Gershkov.PositiveSupport: [propext, Classical.choice, Quot.sound]
 ENV-AUDIT Gershkov.Transfers Gershkov.Transfers.monotone_of_ic: [propext, Classical.choice, Quot.sound]
-ENV-AUDIT PASS: 216 authored constants, including generated helpers
+ENV-AUDIT PASS: 213 authored constants, including generated helpers
