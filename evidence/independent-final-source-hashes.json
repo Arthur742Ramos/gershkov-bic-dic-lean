@@ -1,0 +1,52 @@
+{
+  "review_date": "2026-10-02",
+  "review_scope": "Independent mathematical source review of core library; reviewer authored the disclosed contract generator and wrappers",
+  "source_files_sha256": {
+    "Challenge.lean": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
+    "Gershkov/Compactness.lean": "8c4b0f7ef3766850d16e2da33fe3ae62af0d6bca77119a9cb4f6d14aba7a1397",
+    "Gershkov/Equivalence.lean": "a70f03add72cd0d56b84568460ed2a341ddb09695d7c42657cdb111a6d03b620",
+    "Gershkov/Examples.lean": "36826b0e0f064d91437039d358bbf4b95951f0b408b4625d5d1f654f60471813",
+    "Gershkov/Lifting.lean": "8d6d4b877494de2e95c73432f9e11745b52f1d8f0a87cb460cfe59e851041c64",
+    "Gershkov/Mechanism.lean": "e4c2d4456e5bd05063f96bd610561dfff81e5fc4dce680c28b781f2ba742bfa6",
+    "Gershkov/Model.lean": "7f7b741a020d36bb4b8cb0084ee071da7dcd9c3b33f1a28b0597a70a56161523",
+    "Gershkov/Smoothing.lean": "7b1a4157bcb6b10023c10a008054dc3d2bbaab0992f1af24f32eaa1c8eef9b53",
+    "Gershkov/Support.lean": "3f120dd8fada000d65ebf1f46fe9c97f86344d6e8974b10c8c19550f01798b50",
+    "Gershkov/Transfers.lean": "99ba8b78bf932b7ed0542fcc35ef4d5b4e92d7b7206d6879b4e56058ef2d1597",
+    "Gershkov.lean": "b241b723bd9fcd3d20859f6719edbce4c0446a1292bbf6c3e4e80e6cf6f4a997",
+    "Solution.lean": "5ad7b50036780bb53f26b5a26a26e4d8ddc42025bdffa4a42ff7b24742bf899e",
+    "comparator.json": "9f010d7e32602f62baa70454da74026204bbdc76525df2f35b0262f98a676d2e",
+    "lake-manifest.json": "bacb9e787901cada5dea12566d642c7ad644c497925ff8d16e7771532da30bc0",
+    "lakefile.toml": "694e08a6ab696a612bdb0eeba8339c5ab04e9fe598f1cf8f654c6c652e62963f",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "scripts/EnvironmentAudit.lean": "110cf279d55b9c02537a57d914a4c8ff9ada63011940c00843806a18e911e77b",
+    "scripts/make_challenge.py": "b7f93eca0c736eae9a9cc92bb51cd95d2929d1db3f46bafbc076daefbbeb0a3d"
+  },
+  "documentation_files_sha256": {
+    "README.md": "eb2bb0add7e5020d1afb28e70508a42c352f36818432e07ab82dc41b44a447c1",
+    "formalization.yaml": "1336970be6e18bcecf781e81382f50a10dbd43bf907b144d54e4674ef464b379",
+    "CITATION.cff": "c458f9048917e4d007d965e2e7723a94b007a21dccd325c6630270b61f4344f2"
+  },
+  "environment_audit": {
+    "constants": 216,
+    "explicit_authored_declarations": 158,
+    "additional_generated_constants": 58,
+    "log_sha256": "5e7ae7f9aaee7e771e8d94065fedc8ab73ef9fc0cb94ffc4dc8fb5a8e5555e30",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "local_validation_evidence_sha256": {
+    "evidence/final-comparator.log": "fc9f16d3837e2a072ba83e25ea6305883023e87b502d5625f8aba27c8709d4cd",
+    "evidence/local-render.json": "a0dc4fcb8f905332ac4d398038d832796dda75c85b4029cdfff15cc6d2a2ec16",
+    "evidence/local-sanitizer.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/local-core-audit-build.log": "564ddc36efebe37840a2ffee0f1dc0aa8b57355cad483f1d4b9ba1ac8bcc5aac",
+    "evidence/local-verification.log": "0e3bace5adf6e54ad0006137dd02497e22eb42d55c72e607bbb25ee47ba08069"
+  },
+  "manifest_repair": {
+    "change": "Root name only: bayes_correlated_equilibrium to gershkov_equivalence",
+    "dependency_revisions_changed": false,
+    "mathematical_or_contract_source_changed": false
+  }
+}

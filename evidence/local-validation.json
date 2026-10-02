@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "scope": "Local macOS proof/package/renderer checks; Comparator sandbox disabled and hosted Linux evidence remains separate",
+  "lean": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "authored_explicit_declarations": 158,
+  "authored_environment_constants": 216,
+  "comparator_theorems": 6,
+  "comparator_definitions": 26,
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "permitted_library_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "render": {
+    "status": "pass",
+    "scope": "Local macOS reproduction; no Linux sandbox or hosted workflow claim",
+    "policy_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
+    "verso_commit": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+    "challenge_sha256": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
+    "core_audit_source_sha256": "47ee22447f312db83e764e8eab015a0db49b7317d2fccb4314f52b6a6cad2e3d",
+    "core_audit_executable_sha256": "ad425e3ce14f17a3e9d190fb3b4953eee3d3bc3692b77343cfb0b01bec3b3151",
+    "trusted_audit_declarations": 32,
+    "html_files": {
+      "search/index.html": 31467,
+      "Challenge/index.html": 437749
+    },
+    "per_html_limit_bytes": 8388608
+  }
+}

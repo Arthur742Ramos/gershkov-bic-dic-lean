@@ -1,0 +1,177 @@
+⚠ [3092/3094] Replayed Gershkov.Smoothing
+warning: Gershkov/Smoothing.lean:43:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_left`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:47:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_right`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:52:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_other`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:56:0: automatically included section variable(s) unused in theorem `Gershkov.value_mixPair_left`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:65:0: automatically included section variable(s) unused in theorem `Gershkov.value_mixPair_right`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:74:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_feasible`:
+  [Fintype P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:106:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Gershkov/Smoothing.lean:120:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3093/3094] Built Gershkov.Model (3.6s)
+warning: Gershkov/Model.lean:20:8: automatically included section variable(s) unused in theorem `Gershkov.pack_self`:
+  [Fintype I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:23:8: automatically included section variable(s) unused in theorem `Gershkov.pack_other`:
+  [Fintype I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:27:8: automatically included section variable(s) unused in theorem `Gershkov.pack_split`:
+  [Fintype I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:30:0: automatically included section variable(s) unused in theorem `Gershkov.pack_injective`:
+  [Fintype I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:40:0: automatically included section variable(s) unused in theorem `Gershkov.joint_pos`:
+  [DecidableEq I]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:43:0: automatically included section variable(s) unused in theorem `Gershkov.opponentMass_pos`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:58:0: automatically included section variable(s) unused in theorem `Gershkov.joint_sum`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:63:0: automatically included section variable(s) unused in theorem `Gershkov.opponentMass_sum`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:94:0: automatically included section variable(s) unused in theorem `Gershkov.interim_add`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:98:0: automatically included section variable(s) unused in theorem `Gershkov.interim_sub`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Model.lean:102:0: automatically included section variable(s) unused in theorem `Gershkov.interim_mul`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3094/3094] Built Gershkov.Compactness (3.0s)
+warning: Gershkov/Compactness.lean:14:0: automatically included section variable(s) unused in theorem `Gershkov.feasible_entry_le_one`:
+  [Fintype I]
+  [DecidableEq I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [DecidableEq I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Compactness.lean:20:23: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵s̵e̵t̵O̵f̵_̵a̵n̵d̵S̲e̲t̲.̲o̲f̲P̲r̲e̲d̲_̲a̲n̲d̲
+warning: Gershkov/Compactness.lean:20:38: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵s̵e̵t̵O̵f̵_̵f̵o̵r̵a̵l̵l̵S̲e̲t̲.̲o̲f̲P̲r̲e̲d̲_̲f̲o̲r̲a̲l̲l̲
+warning: Gershkov/Compactness.lean:19:0: automatically included section variable(s) unused in theorem `Gershkov.feasible_isClosed`:
+  [Fintype I]
+  [DecidableEq I]
+  [(i : I) → Fintype (T i)]
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [DecidableEq I] [(i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Compactness.lean:28:0: automatically included section variable(s) unused in theorem `Gershkov.slope_continuous`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Compactness.lean:33:0: automatically included section variable(s) unused in theorem `Gershkov.alternative_continuous`:
+  [(i : I) → DecidableEq (T i)]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Compactness.lean:40:22: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵s̵e̵t̵O̵f̵_̵a̵n̵d̵S̲e̲t̲.̲o̲f̲P̲r̲e̲d̲_̲a̲n̲d̲
+warning: Gershkov/Compactness.lean:40:37: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵s̵e̵t̵O̵f̵_̵f̵o̵r̵a̵l̵l̵S̲e̲t̲.̲o̲f̲P̲r̲e̲d̲_̲f̲o̲r̲a̲l̲l̲
+warning: Gershkov/Compactness.lean:55:0: automatically included section variable(s) unused in theorem `Gershkov.energy_continuous`:
+  [(i : I) → DecidableEq (T i)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(i : I) → DecidableEq (T i)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (3094 jobs).

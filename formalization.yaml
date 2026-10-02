@@ -1,0 +1,85 @@
+version: "v0.4"
+project:
+  name: "Finite Bayesian-to-Dominant-Strategy Equivalence"
+  description: >-
+    Finite Gershkov–Goeree–Kushnir–Moldovanu–Shi (2013) Theorem 2 for arbitrary
+    finite agents and alternatives, heterogeneous ordered finite scalar type
+    supports, arbitrary independent positive support masses, and linear private
+    values with nonnegative slopes and arbitrary constants. The library
+    constructs a feasible dominant-strategy mechanism preserving every support
+    type's interim expected utility and ex ante social surplus. Weighted
+    monotone lifting is proved by a compact feasible quadratic minimizer and
+    an improving perturbation. Adjacent transfer bounds imply full-report IC
+    by telescoping. Validation evidence is recorded separately for the exact candidate.
+  authors:
+    - "Arthur Freitas Ramos"
+    - "David Barros Hulak"
+    - "Ruy Jose Guerra Barretto de Queiroz"
+  responsible_maintainers:
+    - "Arthur Freitas Ramos"
+    - "David Barros Hulak"
+    - "Ruy Jose Guerra Barretto de Queiroz"
+  license: "BSD-3-Clause"
+repository:
+  role: "substantive-development"
+classification:
+  arxiv: ["econ.TH", "cs.GT"]
+  msc2020: ["91A27", "91A10", "91B44", "03B35"]
+sources:
+  - title: "On the Equivalence of Bayesian and Dominant Strategy Implementation"
+    authors: ["Alex Gershkov", "Jacob K. Goeree", "Alexey Kushnir", "Benny Moldovanu", "Xianwen Shi"]
+    type: "paper"
+    year: 2013
+    doi: "10.3982/ECTA10592"
+    url: "https://opus.lib.uts.edu.au/bitstream/10453/27834/1/2012004913OK.pdf"
+    relationship: "formalizes"
+    note: >-
+      Finite-support formalization of Theorem 2, page 206;
+      model and equivalent-mechanism definition on pages 199–200;
+      quadratic minimization and monotone allocation on pages 201–204;
+      discrete adjacent constraints on page 205 and proof on pages 217–218.
+      The modified base transfer is constant with the source's expected value;
+      no ex post individual-rationality claim is made. Package validation is
+      separately recorded and must not be inferred from this source alignment.
+    author_endorsement: "not-contacted"
+automation:
+  methods:
+    - method: "AI-assisted Lean proof development"
+      system: "OpenAI Codex"
+      role: "Exact definitions, complete weighted lifting and transfer proofs, examples and package checks."
+    - method: "Independent AI mathematical and source review"
+      system: "OpenAI Codex, separate reviewing agents"
+      role: "Independent published-source and mathematical reviews; final source and package evidence is recorded separately."
+    - method: "Lean tactic automation"
+      role: "Finite algebra and analysis through Lean tactics; no native_decide proof certificates."
+review:
+  status: "Complete finite proof with independent AI mathematical and source reviews. Exact proof, axiom, Comparator, kernel, rendering and hosted validation evidence is recorded separately."
+  human_review: "No human peer review or source-author endorsement is claimed."
+  limitations: >-
+    The scope is arbitrary finite support types with positive masses,
+    independent across agents. Zero-mass labels outside source supports require
+    a separate extension theorem and are not currently claimed. Continuous
+    type spaces, correlated types, nonlinear values and multidimensional values
+    are outside this target. Types are indexed by Fin (n i + 1), with arbitrary
+    agent-specific natural n i and strictly increasing real type maps. Compact
+    Challenge has six deliberately incomplete named reference theorem proofs
+    and twenty-six genuine copied definitions, abbreviations and instances.
+    Solution uses distinct GGKMS public names and the full Gershkov implementation.
+    The modified base transfer is constant and no individual-rationality theorem
+    is claimed. Exact source hashes and actual validation evidence must be checked
+    before any submission-readiness claim; local macOS checks do not constitute
+    hosted Linux or production intake verification.
+alignment:
+  statements:
+    - lean: "GGKMS.finite_bayesian_dominant_equivalence"
+      description: "Every feasible finite support BIC mechanism admits feasible DIC with all support-type interim utilities and ex ante surplus equal; exact slope marginals, modified interim transfers and quadratic minimality also hold."
+    - lean: "GGKMS.weighted_monotone_lifting"
+      description: "Arbitrary independent positive support masses and nondecreasing interim slopes admit an actual feasible pointwise-monotone quadratic minimizer matching all slope marginals and all alternative ex ante probabilities."
+    - lean: "GGKMS.minimizer_monotone"
+      description: "Every actual quadratic minimizer satisfying the exact weighted matching constraints has pointwise monotone own-type slopes; monotonicity is a proved conclusion."
+    - lean: "GGKMS.Transfers.scalarIC_iff_monotone_adjacent"
+      description: "For strictly ordered finite real types, full-report scalar IC is equivalent to monotone allocation slopes and both adjacent transfer bounds."
+    - lean: "GGKMS.expectation_on_support"
+      description: "Deleting null labels from an arbitrary nonnegative finite weighted law preserves every weighted expectation."
+    - lean: "GGKMS.product_expectation_on_support"
+      description: "Restricting each independent finite nonnegative law to positive support leaves the full joint weighted expectation unchanged, without a claim about IC at deleted labels."

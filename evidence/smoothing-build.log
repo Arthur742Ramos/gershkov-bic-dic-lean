@@ -1,0 +1,47 @@
+⚠ [3092/3092] Built Gershkov.Smoothing (6.0s)
+warning: Gershkov/Smoothing.lean:43:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_left`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:47:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_right`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:52:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_other`:
+  [Fintype P]
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:56:0: automatically included section variable(s) unused in theorem `Gershkov.value_mixPair_left`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:65:0: automatically included section variable(s) unused in theorem `Gershkov.value_mixPair_right`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:74:0: automatically included section variable(s) unused in theorem `Gershkov.mixPair_feasible`:
+  [Fintype P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Gershkov/Smoothing.lean:106:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Gershkov/Smoothing.lean:120:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (3092 jobs).

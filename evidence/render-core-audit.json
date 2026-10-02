@@ -1,0 +1,130 @@
+[
+  {
+    "name": "GGKMS.finite_bayesian_dominant_equivalence",
+    "declaration": "theorem GGKMS.finite_bayesian_dominant_equivalence.{uI, uK} {I : Type uI} [Fintype I] [DecidableEq I] {K : Type uK} [Fintype K]\n  {n : I \u2192 Nat} (p \u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (hp : GGKMS.SupportPrior p) (h\u03b8 : \u2200 (i : I), StrictMono (\u03b8 i))\n  (a c : I \u2192 K \u2192 Real) (_ha : \u2200 (i : I) (k : K), LE.le 0 (a i k)) (q\u2080 : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay\u2080 : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) (hfeasible : GGKMS.Feasible q\u2080) (hBIC : GGKMS.BIC p \u03b8 a c q\u2080 pay\u2080) :\n  Exists fun q =>\n    Exists fun pay =>\n      And (GGKMS.Feasible q)\n        (And (GGKMS.DIC \u03b8 a c q pay)\n          (And\n            (\u2200 (i : I) (t : GGKMS.Types n i),\n              Eq (GGKMS.interimPayoff p \u03b8 a c q pay i t t) (GGKMS.interimPayoff p \u03b8 a c q\u2080 pay\u2080 i t t))\n            (And (Eq (GGKMS.socialSurplus p \u03b8 a c q) (GGKMS.socialSurplus p \u03b8 a c q\u2080))\n              (And (GGKMS.Matches p a q q\u2080)\n                (And\n                  (\u2200 (i : I) (t : GGKMS.Types n i),\n                    Eq (GGKMS.modifiedInterim p c q pay i t) (GGKMS.modifiedInterim p c q\u2080 pay\u2080 i t))\n                  (\u2200 (q' : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real),\n                    GGKMS.Matches p a q' q\u2080 \u2192\n                      LE.le (GGKMS.energy (GGKMS.joint p) a q) (GGKMS.energy (GGKMS.joint p) a q')))))))"
+  },
+  {
+    "name": "GGKMS.weighted_monotone_lifting",
+    "declaration": "theorem GGKMS.weighted_monotone_lifting.{uI, uT, uK} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT}\n  [(i : I) \u2192 Fintype (T i)] [(i : I) \u2192 DecidableEq (T i)] {K : Type uK} [Fintype K] [(i : I) \u2192 Preorder (T i)]\n  (p : (i : I) \u2192 T i \u2192 Real) (hp : GGKMS.SupportPrior p) (a : I \u2192 K \u2192 Real) (q\u2080 : GGKMS.Profile T \u2192 K \u2192 Real)\n  (hq\u2080 : GGKMS.Feasible q\u2080) (hmono : \u2200 (i : I), Monotone (GGKMS.slope p a q\u2080 i)) :\n  Exists fun q =>\n    And (GGKMS.Matches p a q q\u2080)\n      (And (\u2200 (i : I) (y : GGKMS.Opponents T i), Monotone fun t => GGKMS.value a q i (GGKMS.pack i t y))\n        (\u2200 (q' : GGKMS.Profile T \u2192 K \u2192 Real),\n          GGKMS.Matches p a q' q\u2080 \u2192 LE.le (GGKMS.energy (GGKMS.joint p) a q) (GGKMS.energy (GGKMS.joint p) a q')))"
+  },
+  {
+    "name": "GGKMS.minimizer_monotone",
+    "declaration": "theorem GGKMS.minimizer_monotone.{uI, uT, uK} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT}\n  [(i : I) \u2192 Fintype (T i)] [(i : I) \u2192 DecidableEq (T i)] {K : Type uK} [Fintype K] [(i : I) \u2192 Preorder (T i)]\n  (p : (i : I) \u2192 T i \u2192 Real) (hp : GGKMS.SupportPrior p) (a : I \u2192 K \u2192 Real) (q q\u2080 : GGKMS.Profile T \u2192 K \u2192 Real)\n  (hq : GGKMS.Matches p a q q\u2080) (hmono : \u2200 (i : I), Monotone (GGKMS.slope p a q\u2080 i))\n  (hmin :\n    \u2200 (q' : GGKMS.Profile T \u2192 K \u2192 Real),\n      GGKMS.Matches p a q' q\u2080 \u2192 LE.le (GGKMS.energy (GGKMS.joint p) a q) (GGKMS.energy (GGKMS.joint p) a q'))\n  (i : I) (y : GGKMS.Opponents T i) : Monotone fun t => GGKMS.value a q i (GGKMS.pack i t y)"
+  },
+  {
+    "name": "GGKMS.Transfers.scalarIC_iff_monotone_adjacent",
+    "declaration": "theorem GGKMS.Transfers.scalarIC_iff_monotone_adjacent {n : Nat} {x v t : Fin (HAdd.hAdd n 1) \u2192 Real} (hx : StrictMono x) :\n  Iff (GGKMS.Transfers.ScalarIC x v t) (And (Monotone v) (GGKMS.Transfers.AdjacentIC x v t))"
+  },
+  {
+    "name": "GGKMS.expectation_on_support",
+    "declaration": "theorem GGKMS.expectation_on_support.{uA} {A : Type uA} [Fintype A] [DecidableEq A] (w : A \u2192 Real)\n  (hw : \u2200 (a : A), LE.le 0 (w a)) (f : A \u2192 Real) :\n  Eq (Finset.sum Finset.univ fun a => HMul.hMul (w (Subtype.val a)) (f (Subtype.val a)))\n    (Finset.sum Finset.univ fun a => HMul.hMul (w a) (f a))"
+  },
+  {
+    "name": "GGKMS.product_expectation_on_support",
+    "declaration": "theorem GGKMS.product_expectation_on_support.{uI, uT} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT}\n  [(i : I) \u2192 Fintype (T i)] [(i : I) \u2192 DecidableEq (T i)] (p : (i : I) \u2192 T i \u2192 Real)\n  (hp : \u2200 (i : I) (t : T i), LE.le 0 (p i t)) (f : GGKMS.Profile T \u2192 Real) :\n  Eq\n    (Finset.sum Finset.univ fun z =>\n      HMul.hMul (Finset.prod Finset.univ fun i => p i (Subtype.val (z i))) (f fun i => Subtype.val (z i)))\n    (GGKMS.exAnte p f)"
+  },
+  {
+    "name": "GGKMS.value",
+    "declaration": "def GGKMS.value.{uP, uK, uI} {P : Type uP} {K : Type uK} {I : Type uI} [Fintype K] (a : I \u2192 K \u2192 Real) (q : P \u2192 K \u2192 Real)\n  (i : I) (x : P) : Real"
+  },
+  {
+    "name": "GGKMS.Feasible",
+    "declaration": "def GGKMS.Feasible.{uP, uK} {P : Type uP} {K : Type uK} [Fintype K] (q : P \u2192 K \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.energy",
+    "declaration": "def GGKMS.energy.{uP, uK, uI} {P : Type uP} {K : Type uK} {I : Type uI} [Fintype P] [Fintype K] [Fintype I] (\u03bc : P \u2192 Real)\n  (a : I \u2192 K \u2192 Real) (q : P \u2192 K \u2192 Real) : Real"
+  },
+  {
+    "name": "GGKMS.Profile",
+    "declaration": "def GGKMS.Profile.{uI, uT} {I : Type uI} (T : I \u2192 Type uT) : Type (max uI uT)"
+  },
+  {
+    "name": "GGKMS.Opponents",
+    "declaration": "def GGKMS.Opponents.{uI, uT} {I : Type uI} (T : I \u2192 Type uT) (i : I) : Type (max uT uI)"
+  },
+  {
+    "name": "GGKMS.pack",
+    "declaration": "def GGKMS.pack.{uI, uT} {I : Type uI} [DecidableEq I] {T : I \u2192 Type uT} (i : I) (t : T i) (y : GGKMS.Opponents T i) :\n  GGKMS.Profile T"
+  },
+  {
+    "name": "GGKMS.joint",
+    "declaration": "def GGKMS.joint.{uI, uT} {I : Type uI} [Fintype I] {T : I \u2192 Type uT} (p : (i : I) \u2192 T i \u2192 Real) (x : GGKMS.Profile T) : Real"
+  },
+  {
+    "name": "GGKMS.opponentMass",
+    "declaration": "def GGKMS.opponentMass.{uI, uT} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT} (p : (i : I) \u2192 T i \u2192 Real)\n  (i : I) (y : GGKMS.Opponents T i) : Real"
+  },
+  {
+    "name": "GGKMS.SupportPrior",
+    "declaration": "def GGKMS.SupportPrior.{uI, uT} {I : Type uI} {T : I \u2192 Type uT} [(i : I) \u2192 Fintype (T i)] (p : (i : I) \u2192 T i \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.interim",
+    "declaration": "def GGKMS.interim.{uI, uT} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT} [(i : I) \u2192 Fintype (T i)]\n  (p : (i : I) \u2192 T i \u2192 Real) (f : GGKMS.Profile T \u2192 Real) (i : I) (t : T i) : Real"
+  },
+  {
+    "name": "GGKMS.exAnte",
+    "declaration": "def GGKMS.exAnte.{uI, uT} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT} [(i : I) \u2192 Fintype (T i)]\n  (p : (i : I) \u2192 T i \u2192 Real) (f : GGKMS.Profile T \u2192 Real) : Real"
+  },
+  {
+    "name": "GGKMS.slope",
+    "declaration": "def GGKMS.slope.{uI, uT, uK} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT} [(i : I) \u2192 Fintype (T i)]\n  {K : Type uK} [Fintype K] (p : (i : I) \u2192 T i \u2192 Real) (a : I \u2192 K \u2192 Real) (q : GGKMS.Profile T \u2192 K \u2192 Real) (i : I)\n  (t : T i) : Real"
+  },
+  {
+    "name": "GGKMS.Matches",
+    "declaration": "def GGKMS.Matches.{uI, uT, uK} {I : Type uI} [Fintype I] [DecidableEq I] {T : I \u2192 Type uT} [(i : I) \u2192 Fintype (T i)]\n  {K : Type uK} [Fintype K] (p : (i : I) \u2192 T i \u2192 Real) (a : I \u2192 K \u2192 Real) (q q\u2080 : GGKMS.Profile T \u2192 K \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.Types",
+    "declaration": "def GGKMS.Types.{uI} {I : Type uI} (n : I \u2192 Nat) (i : I) : Type"
+  },
+  {
+    "name": "GGKMS.modified",
+    "declaration": "def GGKMS.modified.{uI, uK} {I : Type uI} {K : Type uK} [Fintype K] {n : I \u2192 Nat} (c : I \u2192 K \u2192 Real)\n  (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real) (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) (i : I)\n  (x : GGKMS.Profile (GGKMS.Types n)) : Real"
+  },
+  {
+    "name": "GGKMS.payoff",
+    "declaration": "def GGKMS.payoff.{uI, uK} {I : Type uI} [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (\u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (a c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) (i : I) (t r : GGKMS.Types n i)\n  (y : GGKMS.Opponents (GGKMS.Types n) i) : Real"
+  },
+  {
+    "name": "GGKMS.interimPayoff",
+    "declaration": "def GGKMS.interimPayoff.{uI, uK} {I : Type uI} [Fintype I] [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (p \u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (a c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) (i : I) (t r : GGKMS.Types n i) : Real"
+  },
+  {
+    "name": "GGKMS.BIC",
+    "declaration": "def GGKMS.BIC.{uI, uK} {I : Type uI} [Fintype I] [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (p \u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (a c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.DIC",
+    "declaration": "def GGKMS.DIC.{uI, uK} {I : Type uI} [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (\u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (a c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.modifiedInterim",
+    "declaration": "def GGKMS.modifiedInterim.{uI, uK} {I : Type uI} [Fintype I] [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (p : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real)\n  (pay : I \u2192 GGKMS.Profile (GGKMS.Types n) \u2192 Real) (i : I) (t : GGKMS.Types n i) : Real"
+  },
+  {
+    "name": "GGKMS.socialSurplus",
+    "declaration": "def GGKMS.socialSurplus.{uI, uK} {I : Type uI} [Fintype I] [DecidableEq I] {K : Type uK} [Fintype K] {n : I \u2192 Nat}\n  (p \u03b8 : (i : I) \u2192 GGKMS.Types n i \u2192 Real) (a c : I \u2192 K \u2192 Real) (q : GGKMS.Profile (GGKMS.Types n) \u2192 K \u2192 Real) : Real"
+  },
+  {
+    "name": "GGKMS.Transfers.ScalarIC",
+    "declaration": "def GGKMS.Transfers.ScalarIC {n : Nat} (x v t : Fin (HAdd.hAdd n 1) \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.Transfers.AdjacentIC",
+    "declaration": "def GGKMS.Transfers.AdjacentIC {n : Nat} (x v t : Fin (HAdd.hAdd n 1) \u2192 Real) : Prop"
+  },
+  {
+    "name": "GGKMS.PositiveSupport",
+    "declaration": "def GGKMS.PositiveSupport.{uA} {A : Type uA} (w : A \u2192 Real) : Type uA"
+  },
+  {
+    "name": "GGKMS.positiveSupportFintype",
+    "declaration": "def GGKMS.positiveSupportFintype.{uA} {A : Type uA} [Fintype A] (w : A \u2192 Real) : Fintype (GGKMS.PositiveSupport w)"
+  },
+  {
+    "name": "GGKMS.positiveSupportDecidableEq",
+    "declaration": "def GGKMS.positiveSupportDecidableEq.{uA} {A : Type uA} [DecidableEq A] (w : A \u2192 Real) :\n  DecidableEq (GGKMS.PositiveSupport w)"
+  }
+]

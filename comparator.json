@@ -1,0 +1,45 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GGKMS.finite_bayesian_dominant_equivalence",
+    "GGKMS.weighted_monotone_lifting",
+    "GGKMS.minimizer_monotone",
+    "GGKMS.Transfers.scalarIC_iff_monotone_adjacent",
+    "GGKMS.expectation_on_support",
+    "GGKMS.product_expectation_on_support"
+  ],
+  "definition_names": [
+    "GGKMS.value",
+    "GGKMS.Feasible",
+    "GGKMS.energy",
+    "GGKMS.Profile",
+    "GGKMS.Opponents",
+    "GGKMS.pack",
+    "GGKMS.joint",
+    "GGKMS.opponentMass",
+    "GGKMS.SupportPrior",
+    "GGKMS.interim",
+    "GGKMS.exAnte",
+    "GGKMS.slope",
+    "GGKMS.Matches",
+    "GGKMS.Types",
+    "GGKMS.modified",
+    "GGKMS.payoff",
+    "GGKMS.interimPayoff",
+    "GGKMS.BIC",
+    "GGKMS.DIC",
+    "GGKMS.modifiedInterim",
+    "GGKMS.socialSurplus",
+    "GGKMS.Transfers.ScalarIC",
+    "GGKMS.Transfers.AdjacentIC",
+    "GGKMS.PositiveSupport",
+    "GGKMS.positiveSupportFintype",
+    "GGKMS.positiveSupportDecidableEq"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

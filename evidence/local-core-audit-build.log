@@ -1,0 +1,4 @@
+✔ [2/4] Built PalomarAudit (3.6s)
+✔ [3/4] Built PalomarAudit:c.o (451ms)
+✔ [4/4] Built «palomar-audit»:exe (1.6s)
+Build completed successfully (4 jobs).

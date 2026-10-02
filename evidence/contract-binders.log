@@ -1,0 +1,772 @@
+@GGKMS.finite_bayesian_dominant_equivalence : ∀ {I : Type u_1} [inst : Fintype I] [inst_1 : DecidableEq I]
+  {K : Type u_2} [inst_2 : Fintype K] {n : I → Nat} (p θ : (i : I) → @GGKMS.Types I n i → Real),
+  @GGKMS.SupportPrior I (@GGKMS.Types I n)
+      (fun i =>
+        Fin.fintype
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      p →
+    (∀ (i : I),
+        @StrictMono (@GGKMS.Types I n i) Real
+          (@PartialOrder.toPreorder (@GGKMS.Types I n i)
+            (@Fin.instPartialOrder
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+          Real.instPreorder (θ i)) →
+      ∀ (a c : I → K → Real),
+        (∀ (i : I) (k : K),
+            @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (a i k)) →
+          ∀ (q₀ : @GGKMS.Profile I (@GGKMS.Types I n) → K → Real)
+            (pay₀ : I → @GGKMS.Profile I (@GGKMS.Types I n) → Real),
+            @GGKMS.Feasible (@GGKMS.Profile I (@GGKMS.Types I n)) K inst_2 q₀ →
+              @GGKMS.BIC I inst inst_1 K inst_2 n p θ a c q₀ pay₀ →
+                ∃ q pay,
+                  And (@GGKMS.Feasible (@GGKMS.Profile I (@GGKMS.Types I n)) K inst_2 q)
+                    (And (@GGKMS.DIC I inst_1 K inst_2 n θ a c q pay)
+                      (And
+                        (∀ (i : I) (t : @GGKMS.Types I n i),
+                          @Eq Real (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q pay i t t)
+                            (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q₀ pay₀ i t t))
+                        (And
+                          (@Eq Real (@GGKMS.socialSurplus I inst inst_1 K inst_2 n p θ a c q)
+                            (@GGKMS.socialSurplus I inst inst_1 K inst_2 n p θ a c q₀))
+                          (And
+                            (@GGKMS.Matches I inst inst_1 (@GGKMS.Types I n)
+                              (fun i =>
+                                Fin.fintype
+                                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                              K inst_2 p a q q₀)
+                            (And
+                              (∀ (i : I) (t : @GGKMS.Types I n i),
+                                @Eq Real (@GGKMS.modifiedInterim I inst inst_1 K inst_2 n p c q pay i t)
+                                  (@GGKMS.modifiedInterim I inst inst_1 K inst_2 n p c q₀ pay₀ i t))
+                              (∀ (q' : @GGKMS.Profile I (@GGKMS.Types I n) → K → Real),
+                                @GGKMS.Matches I inst inst_1 (@GGKMS.Types I n)
+                                    (fun i =>
+                                      Fin.fintype
+                                        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                                          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                    K inst_2 p a q' q₀ →
+                                  @LE.le Real Real.instLE
+                                    (@GGKMS.energy (@GGKMS.Profile I (@GGKMS.Types I n)) K I
+                                      (@Pi.instFintype I (@GGKMS.Types I n) inst_1 inst fun a =>
+                                        Fin.fintype
+                                          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n a)
+                                            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                      inst_2 inst (@GGKMS.joint I inst (@GGKMS.Types I n) p) a q)
+                                    (@GGKMS.energy (@GGKMS.Profile I (@GGKMS.Types I n)) K I
+                                      (@Pi.instFintype I (@GGKMS.Types I n) inst_1 inst fun a =>
+                                        Fin.fintype
+                                          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n a)
+                                            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                      inst_2 inst (@GGKMS.joint I inst (@GGKMS.Types I n) p) a q')))))))
+theorem GGKMS.finite_bayesian_dominant_equivalence.{uI, uK} : ∀ {I : Type uI} [inst : Fintype I]
+  [inst_1 : DecidableEq I] {K : Type uK} [inst_2 : Fintype K] {n : I → Nat} (p θ : (i : I) → @GGKMS.Types I n i → Real),
+  @GGKMS.SupportPrior I (@GGKMS.Types I n)
+      (fun i =>
+        Fin.fintype
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      p →
+    (∀ (i : I),
+        @StrictMono (@GGKMS.Types I n i) Real
+          (@PartialOrder.toPreorder (@GGKMS.Types I n i)
+            (@Fin.instPartialOrder
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+          Real.instPreorder (θ i)) →
+      ∀ (a c : I → K → Real),
+        (∀ (i : I) (k : K),
+            @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (a i k)) →
+          ∀ (q₀ : @GGKMS.Profile I (@GGKMS.Types I n) → K → Real)
+            (pay₀ : I → @GGKMS.Profile I (@GGKMS.Types I n) → Real),
+            @GGKMS.Feasible (@GGKMS.Profile I (@GGKMS.Types I n)) K inst_2 q₀ →
+              @GGKMS.BIC I inst inst_1 K inst_2 n p θ a c q₀ pay₀ →
+                ∃ q pay,
+                  And (@GGKMS.Feasible (@GGKMS.Profile I (@GGKMS.Types I n)) K inst_2 q)
+                    (And (@GGKMS.DIC I inst_1 K inst_2 n θ a c q pay)
+                      (And
+                        (∀ (i : I) (t : @GGKMS.Types I n i),
+                          @Eq Real (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q pay i t t)
+                            (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q₀ pay₀ i t t))
+                        (And
+                          (@Eq Real (@GGKMS.socialSurplus I inst inst_1 K inst_2 n p θ a c q)
+                            (@GGKMS.socialSurplus I inst inst_1 K inst_2 n p θ a c q₀))
+                          (And
+                            (@GGKMS.Matches I inst inst_1 (@GGKMS.Types I n)
+                              (fun i =>
+                                Fin.fintype
+                                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                              K inst_2 p a q q₀)
+                            (And
+                              (∀ (i : I) (t : @GGKMS.Types I n i),
+                                @Eq Real (@GGKMS.modifiedInterim I inst inst_1 K inst_2 n p c q pay i t)
+                                  (@GGKMS.modifiedInterim I inst inst_1 K inst_2 n p c q₀ pay₀ i t))
+                              (∀ (q' : @GGKMS.Profile I (@GGKMS.Types I n) → K → Real),
+                                @GGKMS.Matches I inst inst_1 (@GGKMS.Types I n)
+                                    (fun i =>
+                                      Fin.fintype
+                                        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+                                          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                    K inst_2 p a q' q₀ →
+                                  @LE.le Real Real.instLE
+                                    (@GGKMS.energy (@GGKMS.Profile I (@GGKMS.Types I n)) K I
+                                      (@Pi.instFintype I (@GGKMS.Types I n) inst_1 inst fun a =>
+                                        Fin.fintype
+                                          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n a)
+                                            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                      inst_2 inst (@GGKMS.joint I inst (@GGKMS.Types I n) p) a q)
+                                    (@GGKMS.energy (@GGKMS.Profile I (@GGKMS.Types I n)) K I
+                                      (@Pi.instFintype I (@GGKMS.Types I n) inst_1 inst fun a =>
+                                        Fin.fintype
+                                          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n a)
+                                            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                      inst_2 inst (@GGKMS.joint I inst (@GGKMS.Types I n) p) a q'))))))) :=
+<not imported>
+@GGKMS.weighted_monotone_lifting : ∀ {I : Type u_1} [inst : Fintype I] [inst_1 : DecidableEq I] {T : I → Type u_2}
+  [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] {K : Type u_3} [inst_4 : Fintype K]
+  [inst_5 : (i : I) → Preorder (T i)] (p : (i : I) → T i → Real),
+  @GGKMS.SupportPrior I T inst_2 p →
+    ∀ (a : I → K → Real) (q₀ : @GGKMS.Profile I T → K → Real),
+      @GGKMS.Feasible (@GGKMS.Profile I T) K inst_4 q₀ →
+        (∀ (i : I),
+            @Monotone (T i) Real (inst_5 i) Real.instPreorder (@GGKMS.slope I inst inst_1 T inst_2 K inst_4 p a q₀ i)) →
+          ∃ q,
+            And (@GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q q₀)
+              (And
+                (∀ (i : I) (y : @GGKMS.Opponents I T i),
+                  @Monotone (T i) Real (inst_5 i) Real.instPreorder fun t =>
+                    @GGKMS.value (@GGKMS.Profile I T) K I inst_4 a q i (@GGKMS.pack I inst_1 T i t y))
+                (∀ (q' : @GGKMS.Profile I T → K → Real),
+                  @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q' q₀ →
+                    @LE.le Real Real.instLE
+                      (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                        (@GGKMS.joint I inst T p) a q)
+                      (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                        (@GGKMS.joint I inst T p) a q')))
+theorem GGKMS.weighted_monotone_lifting.{uI, uT, uK} : ∀ {I : Type uI} [inst : Fintype I] [inst_1 : DecidableEq I]
+  {T : I → Type uT} [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] {K : Type uK} [inst_4 : Fintype K]
+  [inst_5 : (i : I) → Preorder (T i)] (p : (i : I) → T i → Real),
+  @GGKMS.SupportPrior I T inst_2 p →
+    ∀ (a : I → K → Real) (q₀ : @GGKMS.Profile I T → K → Real),
+      @GGKMS.Feasible (@GGKMS.Profile I T) K inst_4 q₀ →
+        (∀ (i : I),
+            @Monotone (T i) Real (inst_5 i) Real.instPreorder (@GGKMS.slope I inst inst_1 T inst_2 K inst_4 p a q₀ i)) →
+          ∃ q,
+            And (@GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q q₀)
+              (And
+                (∀ (i : I) (y : @GGKMS.Opponents I T i),
+                  @Monotone (T i) Real (inst_5 i) Real.instPreorder fun t =>
+                    @GGKMS.value (@GGKMS.Profile I T) K I inst_4 a q i (@GGKMS.pack I inst_1 T i t y))
+                (∀ (q' : @GGKMS.Profile I T → K → Real),
+                  @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q' q₀ →
+                    @LE.le Real Real.instLE
+                      (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                        (@GGKMS.joint I inst T p) a q)
+                      (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                        (@GGKMS.joint I inst T p) a q'))) :=
+<not imported>
+@GGKMS.minimizer_monotone : ∀ {I : Type u_1} [inst : Fintype I] [inst_1 : DecidableEq I] {T : I → Type u_2}
+  [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] {K : Type u_3} [inst_4 : Fintype K]
+  [inst_5 : (i : I) → Preorder (T i)] (p : (i : I) → T i → Real),
+  @GGKMS.SupportPrior I T inst_2 p →
+    ∀ (a : I → K → Real) (q q₀ : @GGKMS.Profile I T → K → Real),
+      @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q q₀ →
+        (∀ (i : I),
+            @Monotone (T i) Real (inst_5 i) Real.instPreorder (@GGKMS.slope I inst inst_1 T inst_2 K inst_4 p a q₀ i)) →
+          (∀ (q' : @GGKMS.Profile I T → K → Real),
+              @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q' q₀ →
+                @LE.le Real Real.instLE
+                  (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                    (@GGKMS.joint I inst T p) a q)
+                  (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                    (@GGKMS.joint I inst T p) a q')) →
+            ∀ (i : I) (y : @GGKMS.Opponents I T i),
+              @Monotone (T i) Real (inst_5 i) Real.instPreorder fun t =>
+                @GGKMS.value (@GGKMS.Profile I T) K I inst_4 a q i (@GGKMS.pack I inst_1 T i t y)
+theorem GGKMS.minimizer_monotone.{uI, uT, uK} : ∀ {I : Type uI} [inst : Fintype I] [inst_1 : DecidableEq I]
+  {T : I → Type uT} [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] {K : Type uK} [inst_4 : Fintype K]
+  [inst_5 : (i : I) → Preorder (T i)] (p : (i : I) → T i → Real),
+  @GGKMS.SupportPrior I T inst_2 p →
+    ∀ (a : I → K → Real) (q q₀ : @GGKMS.Profile I T → K → Real),
+      @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q q₀ →
+        (∀ (i : I),
+            @Monotone (T i) Real (inst_5 i) Real.instPreorder (@GGKMS.slope I inst inst_1 T inst_2 K inst_4 p a q₀ i)) →
+          (∀ (q' : @GGKMS.Profile I T → K → Real),
+              @GGKMS.Matches I inst inst_1 T inst_2 K inst_4 p a q' q₀ →
+                @LE.le Real Real.instLE
+                  (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                    (@GGKMS.joint I inst T p) a q)
+                  (@GGKMS.energy (@GGKMS.Profile I T) K I (@Pi.instFintype I T inst_1 inst inst_2) inst_4 inst
+                    (@GGKMS.joint I inst T p) a q')) →
+            ∀ (i : I) (y : @GGKMS.Opponents I T i),
+              @Monotone (T i) Real (inst_5 i) Real.instPreorder fun t =>
+                @GGKMS.value (@GGKMS.Profile I T) K I inst_4 a q i (@GGKMS.pack I inst_1 T i t y) :=
+<not imported>
+@GGKMS.Transfers.scalarIC_iff_monotone_adjacent : ∀ {n : Nat}
+  {x v t :
+    Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real},
+  @StrictMono
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      Real
+      (@PartialOrder.toPreorder
+        (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (@Fin.instPartialOrder
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+      Real.instPreorder x →
+    Iff (@GGKMS.Transfers.ScalarIC n x v t)
+      (And
+        (@Monotone
+          (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+          Real
+          (@PartialOrder.toPreorder
+            (Fin
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (@Fin.instPartialOrder
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+          Real.instPreorder v)
+        (@GGKMS.Transfers.AdjacentIC n x v t))
+theorem GGKMS.Transfers.scalarIC_iff_monotone_adjacent : ∀ {n : Nat}
+  {x v t :
+    Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real},
+  @StrictMono
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      Real
+      (@PartialOrder.toPreorder
+        (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (@Fin.instPartialOrder
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+      Real.instPreorder x →
+    Iff (@GGKMS.Transfers.ScalarIC n x v t)
+      (And
+        (@Monotone
+          (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+          Real
+          (@PartialOrder.toPreorder
+            (Fin
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (@Fin.instPartialOrder
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+          Real.instPreorder v)
+        (@GGKMS.Transfers.AdjacentIC n x v t)) :=
+<not imported>
+@GGKMS.expectation_on_support : ∀ {A : Type u_1} [inst : Fintype A] [DecidableEq A] (w : A → Real),
+  (∀ (a : A), @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a)) →
+    ∀ (f : A → Real),
+      @Eq Real
+        (∑ a,
+          @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (w
+              (@Subtype.val A
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a))
+                a))
+            (f
+              (@Subtype.val A
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a))
+                a)))
+        (∑ a, @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (w a) (f a))
+theorem GGKMS.expectation_on_support.{uA} : ∀ {A : Type uA} [inst : Fintype A] [DecidableEq A] (w : A → Real),
+  (∀ (a : A), @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a)) →
+    ∀ (f : A → Real),
+      @Eq Real
+        (∑ a,
+          @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (w
+              (@Subtype.val A
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a))
+                a))
+            (f
+              (@Subtype.val A
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a))
+                a)))
+        (∑ a, @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (w a) (f a)) :=
+<not imported>
+@GGKMS.product_expectation_on_support : ∀ {I : Type u_1} [inst : Fintype I] [inst_1 : DecidableEq I] {T : I → Type u_2}
+  [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] (p : (i : I) → T i → Real),
+  (∀ (i : I) (t : T i),
+      @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i t)) →
+    ∀ (f : @GGKMS.Profile I T → Real),
+      @Eq Real
+        (∑ z,
+          @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (∏ i,
+              p i
+                (@Subtype.val (T i)
+                  (fun a =>
+                    @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i a))
+                  (z i)))
+            (f fun i =>
+              @Subtype.val (T i)
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i a))
+                (z i)))
+        (@GGKMS.exAnte I inst inst_1 T inst_2 p f)
+theorem GGKMS.product_expectation_on_support.{uI, uT} : ∀ {I : Type uI} [inst : Fintype I] [inst_1 : DecidableEq I]
+  {T : I → Type uT} [inst_2 : (i : I) → Fintype (T i)] [(i : I) → DecidableEq (T i)] (p : (i : I) → T i → Real),
+  (∀ (i : I) (t : T i),
+      @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i t)) →
+    ∀ (f : @GGKMS.Profile I T → Real),
+      @Eq Real
+        (∑ z,
+          @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (∏ i,
+              p i
+                (@Subtype.val (T i)
+                  (fun a =>
+                    @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i a))
+                  (z i)))
+            (f fun i =>
+              @Subtype.val (T i)
+                (fun a =>
+                  @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i a))
+                (z i)))
+        (@GGKMS.exAnte I inst inst_1 T inst_2 p f) :=
+<not imported>
+@GGKMS.value : {P : Type u_1} →
+  {K : Type u_2} → {I : Type u_3} → [Fintype K] → (I → K → Real) → (P → K → Real) → I → P → Real
+@[expose] def GGKMS.value.{uP, uK, uI} : {P : Type uP} →
+  {K : Type uK} → {I : Type uI} → [Fintype K] → (I → K → Real) → (P → K → Real) → I → P → Real :=
+fun {P} {K} {I} [Fintype K] a q i x => ∑ k, @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (a i k) (q x k)
+@GGKMS.Feasible : {P : Type u_1} → {K : Type u_2} → [Fintype K] → (P → K → Real) → Prop
+@[expose] def GGKMS.Feasible.{uP, uK} : {P : Type uP} → {K : Type uK} → [Fintype K] → (P → K → Real) → Prop :=
+fun {P} {K} [Fintype K] q =>
+  And
+    (∀ (x : P) (k : K),
+      @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (q x k))
+    (∀ (x : P), @Eq Real (∑ k, q x k) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))
+@GGKMS.energy : {P : Type u_1} →
+  {K : Type u_2} →
+    {I : Type u_3} → [Fintype P] → [Fintype K] → [Fintype I] → (P → Real) → (I → K → Real) → (P → K → Real) → Real
+@[expose] def GGKMS.energy.{uP, uK, uI} : {P : Type uP} →
+  {K : Type uK} →
+    {I : Type uI} → [Fintype P] → [Fintype K] → [Fintype I] → (P → Real) → (I → K → Real) → (P → K → Real) → Real :=
+fun {P} {K} {I} [Fintype P] [inst_1 : Fintype K] [Fintype I] μ a q =>
+  ∑ x,
+    @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (μ x)
+      (∑ i,
+        @HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+          (@GGKMS.value P K I inst_1 a q i x) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+@GGKMS.Profile : {I : Type u_1} → (I → Type u_2) → Type (max u_1 u_2)
+@[reducible, expose] def GGKMS.Profile.{uI, uT} : {I : Type uI} → (I → Type uT) → Type (max uI uT) :=
+fun {I} T => (i : I) → T i
+@GGKMS.Opponents : {I : Type u_1} → (I → Type u_2) → I → Type (max u_2 u_1)
+@[reducible, expose] def GGKMS.Opponents.{uI, uT} : {I : Type uI} → (I → Type uT) → I → Type (max uT uI) :=
+fun {I} T i => (j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)
+@GGKMS.pack : {I : Type u_1} →
+  [DecidableEq I] → {T : I → Type u_2} → (i : I) → T i → @GGKMS.Opponents I T i → @GGKMS.Profile I T
+@[expose] def GGKMS.pack.{uI, uT} : {I : Type uI} →
+  [DecidableEq I] → {T : I → Type uT} → (i : I) → T i → @GGKMS.Opponents I T i → @GGKMS.Profile I T :=
+fun {I} [inst : DecidableEq I] {T} i t y =>
+  @DFunLike.coe
+    (Equiv (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)))
+      ((j : I) → T j))
+    (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)))
+    (fun x => (j : I) → T j)
+    (@EquivLike.toFunLike
+      (Equiv (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)))
+        ((j : I) → T j))
+      (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j))) ((j : I) → T j)
+      (@Equiv.instEquivLike
+        (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j))) ((j : I) → T j)))
+    (@Equiv.symm ((j : I) → T j)
+      (Prod (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)))
+      (@Equiv.piSplitAt I inst i T))
+    (@Prod.mk (T i) ((j : @Subtype I fun j => @Ne I j i) → T (@Subtype.val I (fun j => @Ne I j i) j)) t y)
+@GGKMS.joint : {I : Type u_1} → [Fintype I] → {T : I → Type u_2} → ((i : I) → T i → Real) → @GGKMS.Profile I T → Real
+@[expose] def GGKMS.joint.{uI, uT} : {I : Type uI} →
+  [Fintype I] → {T : I → Type uT} → ((i : I) → T i → Real) → @GGKMS.Profile I T → Real :=
+fun {I} [Fintype I] {T} p x => ∏ i, p i (x i)
+@GGKMS.opponentMass : {I : Type u_1} →
+  [Fintype I] → [DecidableEq I] → {T : I → Type u_2} → ((i : I) → T i → Real) → (i : I) → @GGKMS.Opponents I T i → Real
+@[expose] def GGKMS.opponentMass.{uI, uT} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] → {T : I → Type uT} → ((i : I) → T i → Real) → (i : I) → @GGKMS.Opponents I T i → Real :=
+fun {I} [Fintype I] [DecidableEq I] {T} p i y => ∏ j, p (@Subtype.val I (fun j => @Ne I j i) j) (y j)
+@GGKMS.SupportPrior : {I : Type u_1} → {T : I → Type u_2} → [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → Prop
+@[expose] def GGKMS.SupportPrior.{uI, uT} : {I : Type uI} →
+  {T : I → Type uT} → [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → Prop :=
+fun {I} {T} [(i : I) → Fintype (T i)] p =>
+  And
+    (∀ (i : I) (t : T i),
+      @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (p i t))
+    (∀ (i : I), @Eq Real (∑ t, p i t) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))
+@GGKMS.interim : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type u_2} →
+        [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → (@GGKMS.Profile I T → Real) → (i : I) → T i → Real
+@[expose] def GGKMS.interim.{uI, uT} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type uT} →
+        [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → (@GGKMS.Profile I T → Real) → (i : I) → T i → Real :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {T} [(i : I) → Fintype (T i)] p f i t =>
+  ∑ y,
+    @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@GGKMS.opponentMass I inst inst_1 T p i y)
+      (f (@GGKMS.pack I inst_1 T i t y))
+@GGKMS.exAnte : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type u_2} → [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → (@GGKMS.Profile I T → Real) → Real
+@[expose] def GGKMS.exAnte.{uI, uT} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type uT} → [(i : I) → Fintype (T i)] → ((i : I) → T i → Real) → (@GGKMS.Profile I T → Real) → Real :=
+fun {I} [inst : Fintype I] [DecidableEq I] {T} [(i : I) → Fintype (T i)] p f =>
+  ∑ x, @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@GGKMS.joint I inst T p x) (f x)
+@GGKMS.slope : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type u_2} →
+        [(i : I) → Fintype (T i)] →
+          {K : Type u_3} →
+            [Fintype K] →
+              ((i : I) → T i → Real) → (I → K → Real) → (@GGKMS.Profile I T → K → Real) → (i : I) → T i → Real
+@[expose] def GGKMS.slope.{uI, uT, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type uT} →
+        [(i : I) → Fintype (T i)] →
+          {K : Type uK} →
+            [Fintype K] →
+              ((i : I) → T i → Real) → (I → K → Real) → (@GGKMS.Profile I T → K → Real) → (i : I) → T i → Real :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {T} [inst_2 : (i : I) → Fintype (T i)] {K} [inst_3 : Fintype K] p a
+    q i t =>
+  @GGKMS.interim I inst inst_1 T inst_2 p (@GGKMS.value (@GGKMS.Profile I T) K I inst_3 a q i) i t
+@GGKMS.Matches : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type u_2} →
+        [(i : I) → Fintype (T i)] →
+          {K : Type u_3} →
+            [Fintype K] →
+              ((i : I) → T i → Real) →
+                (I → K → Real) → (@GGKMS.Profile I T → K → Real) → (@GGKMS.Profile I T → K → Real) → Prop
+@[expose] def GGKMS.Matches.{uI, uT, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {T : I → Type uT} →
+        [(i : I) → Fintype (T i)] →
+          {K : Type uK} →
+            [Fintype K] →
+              ((i : I) → T i → Real) →
+                (I → K → Real) → (@GGKMS.Profile I T → K → Real) → (@GGKMS.Profile I T → K → Real) → Prop :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {T} [inst_2 : (i : I) → Fintype (T i)] {K} [inst_3 : Fintype K] p a
+    q q₀ =>
+  And (@GGKMS.Feasible (@GGKMS.Profile I T) K inst_3 q)
+    (And
+      (∀ (i : I) (t : T i),
+        @Eq Real (@GGKMS.slope I inst inst_1 T inst_2 K inst_3 p a q i t)
+          (@GGKMS.slope I inst inst_1 T inst_2 K inst_3 p a q₀ i t))
+      (∀ (k : K),
+        @Eq Real (@GGKMS.exAnte I inst inst_1 T inst_2 p fun x => q x k)
+          (@GGKMS.exAnte I inst inst_1 T inst_2 p fun x => q₀ x k)))
+@GGKMS.Types : {I : Type u_1} → (I → Nat) → I → Type
+@[reducible, expose] def GGKMS.Types.{uI} : {I : Type uI} → (I → Nat) → I → Type :=
+fun {I} n i =>
+  Fin
+    (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+@GGKMS.modified : {I : Type u_1} →
+  {K : Type u_2} →
+    [Fintype K] →
+      {n : I → Nat} →
+        (I → K → Real) →
+          (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+            (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → I → @GGKMS.Profile I (@GGKMS.Types I n) → Real
+@[expose] def GGKMS.modified.{uI, uK} : {I : Type uI} →
+  {K : Type uK} →
+    [Fintype K] →
+      {n : I → Nat} →
+        (I → K → Real) →
+          (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+            (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → I → @GGKMS.Profile I (@GGKMS.Types I n) → Real :=
+fun {I} {K} [inst : Fintype K] {n} c q pay i x =>
+  @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (pay i x)
+    (@GGKMS.value (@GGKMS.Profile I (@GGKMS.Types I n)) K I inst c q i x)
+@GGKMS.payoff : {I : Type u_1} →
+  [DecidableEq I] →
+    {K : Type u_2} →
+      [Fintype K] →
+        {n : I → Nat} →
+          ((i : I) → @GGKMS.Types I n i → Real) →
+            (I → K → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) →
+                    (i : I) → @GGKMS.Types I n i → @GGKMS.Types I n i → @GGKMS.Opponents I (@GGKMS.Types I n) i → Real
+@[expose] def GGKMS.payoff.{uI, uK} : {I : Type uI} →
+  [DecidableEq I] →
+    {K : Type uK} →
+      [Fintype K] →
+        {n : I → Nat} →
+          ((i : I) → @GGKMS.Types I n i → Real) →
+            (I → K → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) →
+                    (i : I) →
+                      @GGKMS.Types I n i → @GGKMS.Types I n i → @GGKMS.Opponents I (@GGKMS.Types I n) i → Real :=
+fun {I} [inst : DecidableEq I] {K} [inst_1 : Fintype K] {n} θ a c q pay i t r y =>
+  @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (θ i t)
+        (@GGKMS.value (@GGKMS.Profile I (@GGKMS.Types I n)) K I inst_1 a q i
+          (@GGKMS.pack I inst (@GGKMS.Types I n) i r y)))
+      (@GGKMS.value (@GGKMS.Profile I (@GGKMS.Types I n)) K I inst_1 c q i
+        (@GGKMS.pack I inst (@GGKMS.Types I n) i r y)))
+    (pay i (@GGKMS.pack I inst (@GGKMS.Types I n) i r y))
+@GGKMS.interimPayoff : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type u_2} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) →
+                  (I → K → Real) →
+                    (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                      (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) →
+                        (i : I) → @GGKMS.Types I n i → @GGKMS.Types I n i → Real
+@[expose] def GGKMS.interimPayoff.{uI, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type uK} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) →
+                  (I → K → Real) →
+                    (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                      (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) →
+                        (i : I) → @GGKMS.Types I n i → @GGKMS.Types I n i → Real :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {K} [inst_2 : Fintype K] {n} p θ a c q pay i t r =>
+  ∑ y,
+    @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@GGKMS.opponentMass I inst inst_1 (@GGKMS.Types I n) p i y)
+      (@GGKMS.payoff I inst_1 K inst_2 n θ a c q pay i t r y)
+@GGKMS.BIC : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type u_2} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) →
+                  (I → K → Real) →
+                    (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                      (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → Prop
+@[expose] def GGKMS.BIC.{uI, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type uK} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) →
+                  (I → K → Real) →
+                    (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                      (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → Prop :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {K} [inst_2 : Fintype K] {n} p θ a c q pay =>
+  ∀ (i : I) (t r : @GGKMS.Types I n i),
+    @LE.le Real Real.instLE (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q pay i t r)
+      (@GGKMS.interimPayoff I inst inst_1 K inst_2 n p θ a c q pay i t t)
+@GGKMS.DIC : {I : Type u_1} →
+  [DecidableEq I] →
+    {K : Type u_2} →
+      [Fintype K] →
+        {n : I → Nat} →
+          ((i : I) → @GGKMS.Types I n i → Real) →
+            (I → K → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → Prop
+@[expose] def GGKMS.DIC.{uI, uK} : {I : Type uI} →
+  [DecidableEq I] →
+    {K : Type uK} →
+      [Fintype K] →
+        {n : I → Nat} →
+          ((i : I) → @GGKMS.Types I n i → Real) →
+            (I → K → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → Prop :=
+fun {I} [inst : DecidableEq I] {K} [inst_1 : Fintype K] {n} θ a c q pay =>
+  ∀ (i : I) (y : @GGKMS.Opponents I (@GGKMS.Types I n) i) (t r : @GGKMS.Types I n i),
+    @LE.le Real Real.instLE (@GGKMS.payoff I inst K inst_1 n θ a c q pay i t r y)
+      (@GGKMS.payoff I inst K inst_1 n θ a c q pay i t t y)
+@GGKMS.modifiedInterim : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type u_2} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → (i : I) → @GGKMS.Types I n i → Real
+@[expose] def GGKMS.modifiedInterim.{uI, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type uK} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              (I → K → Real) →
+                (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) →
+                  (I → @GGKMS.Profile I (@GGKMS.Types I n) → Real) → (i : I) → @GGKMS.Types I n i → Real :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {K} [inst_2 : Fintype K] {n} p c q pay i t =>
+  @GGKMS.interim I inst inst_1 (@GGKMS.Types I n)
+    (fun i =>
+      Fin.fintype
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+    p (@GGKMS.modified I K inst_2 n c q pay i) i t
+@GGKMS.socialSurplus : {I : Type u_1} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type u_2} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) → (I → K → Real) → (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) → Real
+@[expose] def GGKMS.socialSurplus.{uI, uK} : {I : Type uI} →
+  [Fintype I] →
+    [DecidableEq I] →
+      {K : Type uK} →
+        [Fintype K] →
+          {n : I → Nat} →
+            ((i : I) → @GGKMS.Types I n i → Real) →
+              ((i : I) → @GGKMS.Types I n i → Real) →
+                (I → K → Real) → (I → K → Real) → (@GGKMS.Profile I (@GGKMS.Types I n) → K → Real) → Real :=
+fun {I} [inst : Fintype I] [inst_1 : DecidableEq I] {K} [inst_2 : Fintype K] {n} p θ a c q =>
+  @GGKMS.exAnte I inst inst_1 (@GGKMS.Types I n)
+    (fun i =>
+      Fin.fintype
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) (n i)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+    p fun x =>
+    ∑ i,
+      @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (θ i (x i))
+          (@GGKMS.value (@GGKMS.Profile I (@GGKMS.Types I n)) K I inst_2 a q i x))
+        (@GGKMS.value (@GGKMS.Profile I (@GGKMS.Types I n)) K I inst_2 c q i x)
+@GGKMS.Transfers.ScalarIC : {n : Nat} →
+  (Fin (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real) →
+    (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+        Real) →
+      (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+          Real) →
+        Prop
+@[expose] def GGKMS.Transfers.ScalarIC : {n : Nat} →
+  (Fin (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real) →
+    (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+        Real) →
+      (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+          Real) →
+        Prop :=
+fun {n} x v t =>
+  ∀
+    (r s :
+      Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+    @LE.le Real Real.instLE
+      (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (x r) (v s)) (t s))
+      (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (x r) (v r)) (t r))
+@GGKMS.Transfers.AdjacentIC : {n : Nat} →
+  (Fin (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real) →
+    (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+        Real) →
+      (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+          Real) →
+        Prop
+@[expose] def GGKMS.Transfers.AdjacentIC : {n : Nat} →
+  (Fin (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+      Real) →
+    (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+        Real) →
+      (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+          Real) →
+        Prop :=
+fun {n} x v t =>
+  ∀ (k : Fin n),
+    And
+      (@LE.le Real Real.instLE
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (x (@Fin.castSucc n k))
+          (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (v (@Fin.succ n k)) (v (@Fin.castSucc n k))))
+        (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (t (@Fin.castSucc n k)) (t (@Fin.succ n k))))
+      (@LE.le Real Real.instLE
+        (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (t (@Fin.castSucc n k)) (t (@Fin.succ n k)))
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (x (@Fin.succ n k))
+          (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (v (@Fin.succ n k)) (v (@Fin.castSucc n k)))))
+@GGKMS.PositiveSupport : {A : Type u_1} → (A → Real) → Type u_1
+@[reducible, expose] def GGKMS.PositiveSupport.{uA} : {A : Type uA} → (A → Real) → Type (max 0 uA) :=
+fun {A} w =>
+  @Subtype A fun a => @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a)
+@GGKMS.positiveSupportFintype : {A : Type u_1} → [Fintype A] → (w : A → Real) → Fintype (@GGKMS.PositiveSupport A w)
+@[instance_reducible, expose] def GGKMS.positiveSupportFintype.{uA} : {A : Type uA} →
+  [Fintype A] → (w : A → Real) → Fintype (@GGKMS.PositiveSupport A w) :=
+fun {A} [inst : Fintype A] w =>
+  @Subtype.fintype A
+    (fun a => @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a))
+    (fun a => Real.decidableLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a)) inst
+@GGKMS.positiveSupportDecidableEq : {A : Type u_1} →
+  [DecidableEq A] → (w : A → Real) → DecidableEq (@GGKMS.PositiveSupport A w)
+@[instance_reducible, expose] def GGKMS.positiveSupportDecidableEq.{uA} : {A : Type uA} →
+  [DecidableEq A] → (w : A → Real) → DecidableEq (@GGKMS.PositiveSupport A w) :=
+fun {A} [inst : DecidableEq A] w =>
+  @Subtype.instDecidableEq A
+    (fun a => @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (w a)) inst

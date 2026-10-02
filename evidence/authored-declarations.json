@@ -1,0 +1,966 @@
+{
+  "declarations": [
+    {
+      "name": "Gershkov.feasible_entry_le_one",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 14
+    },
+    {
+      "name": "Gershkov.feasible_isClosed",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 19
+    },
+    {
+      "name": "Gershkov.slope_continuous",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 28
+    },
+    {
+      "name": "Gershkov.alternative_continuous",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 33
+    },
+    {
+      "name": "Gershkov.matches_isClosed",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 38
+    },
+    {
+      "name": "Gershkov.matches_isCompact",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 49
+    },
+    {
+      "name": "Gershkov.energy_continuous",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 55
+    },
+    {
+      "name": "Gershkov.exists_minimizer",
+      "kind": "theorem",
+      "source": "Gershkov/Compactness.lean",
+      "line": 62
+    },
+    {
+      "name": "Gershkov.transfers_for_matching_allocation",
+      "kind": "theorem",
+      "source": "Gershkov/Equivalence.lean",
+      "line": 15
+    },
+    {
+      "name": "Gershkov.finite_bayesian_dominant_equivalence",
+      "kind": "theorem",
+      "source": "Gershkov/Equivalence.lean",
+      "line": 54
+    },
+    {
+      "name": "Gershkov.Examples.types",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 22
+    },
+    {
+      "name": "Gershkov.Examples.firstPrior",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 23
+    },
+    {
+      "name": "Gershkov.Examples.secondPrior",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 24
+    },
+    {
+      "name": "Gershkov.Examples.original",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 26
+    },
+    {
+      "name": "Gershkov.Examples.lifted",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 29
+    },
+    {
+      "name": "Gershkov.Examples.firstSlope",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 32
+    },
+    {
+      "name": "Gershkov.Examples.secondSlope",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 33
+    },
+    {
+      "name": "Gershkov.Examples.firstTransfer",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 34
+    },
+    {
+      "name": "Gershkov.Examples.secondTransfer",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 35
+    },
+    {
+      "name": "Gershkov.Examples.allocation",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 37
+    },
+    {
+      "name": "Gershkov.Examples.priors_positive_normalized",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 41
+    },
+    {
+      "name": "Gershkov.Examples.types_strictMono",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 50
+    },
+    {
+      "name": "Gershkov.Examples.allocations_feasible",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 56
+    },
+    {
+      "name": "Gershkov.Examples.weighted_marginals",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 67
+    },
+    {
+      "name": "Gershkov.Examples.original_bic",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 78
+    },
+    {
+      "name": "Gershkov.Examples.original_not_dic",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 85
+    },
+    {
+      "name": "Gershkov.Examples.lifted_dic",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 91
+    },
+    {
+      "name": "Gershkov.Examples.exAnte_on_probability",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 100
+    },
+    {
+      "name": "Gershkov.Examples.constantSurplus",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 106
+    },
+    {
+      "name": "Gershkov.Examples.nonzero_constants_surplus",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 109
+    },
+    {
+      "name": "Gershkov.Examples.interim_utilities_equal",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 113
+    },
+    {
+      "name": "Gershkov.Examples.flat_coefficient",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 123
+    },
+    {
+      "name": "Gershkov.Examples.negativeTypes",
+      "kind": "def",
+      "source": "Gershkov/Examples.lean",
+      "line": 130
+    },
+    {
+      "name": "Gershkov.Examples.negative_types_ic",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 133
+    },
+    {
+      "name": "Gershkov.Examples.singleton_transfer",
+      "kind": "theorem",
+      "source": "Gershkov/Examples.lean",
+      "line": 144
+    },
+    {
+      "name": "Gershkov.crossing_context",
+      "kind": "theorem",
+      "source": "Gershkov/Lifting.lean",
+      "line": 12
+    },
+    {
+      "name": "Gershkov.improving_perturbation",
+      "kind": "theorem",
+      "source": "Gershkov/Lifting.lean",
+      "line": 33
+    },
+    {
+      "name": "Gershkov.minimizer_monotone",
+      "kind": "theorem",
+      "source": "Gershkov/Lifting.lean",
+      "line": 148
+    },
+    {
+      "name": "Gershkov.weighted_monotone_lifting",
+      "kind": "theorem",
+      "source": "Gershkov/Lifting.lean",
+      "line": 162
+    },
+    {
+      "name": "Gershkov.Types",
+      "kind": "abbrev",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 12
+    },
+    {
+      "name": "Gershkov.modified",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 14
+    },
+    {
+      "name": "Gershkov.payoff",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 20
+    },
+    {
+      "name": "Gershkov.interimPayoff",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 25
+    },
+    {
+      "name": "Gershkov.BIC",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 30
+    },
+    {
+      "name": "Gershkov.DIC",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 34
+    },
+    {
+      "name": "Gershkov.modifiedInterim",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 38
+    },
+    {
+      "name": "Gershkov.payoff_modified",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 42
+    },
+    {
+      "name": "Gershkov.interimPayoff_modified",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 50
+    },
+    {
+      "name": "Gershkov.bic_scalar",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 62
+    },
+    {
+      "name": "Gershkov.socialSurplus",
+      "kind": "def",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 69
+    },
+    {
+      "name": "Gershkov.exAnte_value",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 73
+    },
+    {
+      "name": "Gershkov.exAnte_typeValue",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 85
+    },
+    {
+      "name": "Gershkov.surplus_matches",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 99
+    },
+    {
+      "name": "Gershkov.exAnte_transfers_match",
+      "kind": "theorem",
+      "source": "Gershkov/Mechanism.lean",
+      "line": 116
+    },
+    {
+      "name": "Gershkov.Profile",
+      "kind": "abbrev",
+      "source": "Gershkov/Model.lean",
+      "line": 14
+    },
+    {
+      "name": "Gershkov.Opponents",
+      "kind": "abbrev",
+      "source": "Gershkov/Model.lean",
+      "line": 15
+    },
+    {
+      "name": "Gershkov.pack",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 17
+    },
+    {
+      "name": "Gershkov.pack_self",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 20
+    },
+    {
+      "name": "Gershkov.pack_other",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 23
+    },
+    {
+      "name": "Gershkov.pack_split",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 27
+    },
+    {
+      "name": "Gershkov.pack_injective",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 30
+    },
+    {
+      "name": "Gershkov.joint",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 33
+    },
+    {
+      "name": "Gershkov.opponentMass",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 34
+    },
+    {
+      "name": "Gershkov.SupportPrior",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 37
+    },
+    {
+      "name": "Gershkov.joint_pos",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 40
+    },
+    {
+      "name": "Gershkov.opponentMass_pos",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 43
+    },
+    {
+      "name": "Gershkov.joint_pack",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 47
+    },
+    {
+      "name": "Gershkov.joint_sum",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 58
+    },
+    {
+      "name": "Gershkov.opponentMass_sum",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 63
+    },
+    {
+      "name": "Gershkov.interim",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 69
+    },
+    {
+      "name": "Gershkov.exAnte",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 72
+    },
+    {
+      "name": "Gershkov.fiber_moment",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 75
+    },
+    {
+      "name": "Gershkov.exAnte_interim",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 83
+    },
+    {
+      "name": "Gershkov.interim_const",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 90
+    },
+    {
+      "name": "Gershkov.interim_add",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 94
+    },
+    {
+      "name": "Gershkov.interim_sub",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 98
+    },
+    {
+      "name": "Gershkov.interim_mul",
+      "kind": "theorem",
+      "source": "Gershkov/Model.lean",
+      "line": 102
+    },
+    {
+      "name": "Gershkov.slope",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 106
+    },
+    {
+      "name": "Gershkov.Matches",
+      "kind": "def",
+      "source": "Gershkov/Model.lean",
+      "line": 109
+    },
+    {
+      "name": "Gershkov.value",
+      "kind": "def",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 13
+    },
+    {
+      "name": "Gershkov.Feasible",
+      "kind": "def",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 16
+    },
+    {
+      "name": "Gershkov.energy",
+      "kind": "def",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 19
+    },
+    {
+      "name": "Gershkov.mixPair",
+      "kind": "def",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 23
+    },
+    {
+      "name": "Gershkov.sum_change_two",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 27
+    },
+    {
+      "name": "Gershkov.mixPair_left",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 43
+    },
+    {
+      "name": "Gershkov.mixPair_right",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 47
+    },
+    {
+      "name": "Gershkov.mixPair_other",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 52
+    },
+    {
+      "name": "Gershkov.value_mixPair_left",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 56
+    },
+    {
+      "name": "Gershkov.value_mixPair_right",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 65
+    },
+    {
+      "name": "Gershkov.mixPair_feasible",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 74
+    },
+    {
+      "name": "Gershkov.mixPair_moment",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 94
+    },
+    {
+      "name": "Gershkov.mixPair_energy",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 108
+    },
+    {
+      "name": "Gershkov.mixPair_energy_lt",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 122
+    },
+    {
+      "name": "Gershkov.doubleMix",
+      "kind": "def",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 138
+    },
+    {
+      "name": "Gershkov.doubleMix_moment",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 141
+    },
+    {
+      "name": "Gershkov.doubleMix_energy_lt",
+      "kind": "theorem",
+      "source": "Gershkov/Smoothing.lean",
+      "line": 156
+    },
+    {
+      "name": "Gershkov.PositiveSupport",
+      "kind": "abbrev",
+      "source": "Gershkov/Support.lean",
+      "line": 11
+    },
+    {
+      "name": "Gershkov.positiveSupportFintype",
+      "kind": "instance",
+      "source": "Gershkov/Support.lean",
+      "line": 13
+    },
+    {
+      "name": "Gershkov.positiveSupportDecidableEq",
+      "kind": "instance",
+      "source": "Gershkov/Support.lean",
+      "line": 16
+    },
+    {
+      "name": "Gershkov.expectation_on_support",
+      "kind": "theorem",
+      "source": "Gershkov/Support.lean",
+      "line": 20
+    },
+    {
+      "name": "Gershkov.support_normalized",
+      "kind": "theorem",
+      "source": "Gershkov/Support.lean",
+      "line": 30
+    },
+    {
+      "name": "Gershkov.support_nonempty",
+      "kind": "theorem",
+      "source": "Gershkov/Support.lean",
+      "line": 35
+    },
+    {
+      "name": "Gershkov.product_expectation_on_support",
+      "kind": "theorem",
+      "source": "Gershkov/Support.lean",
+      "line": 49
+    },
+    {
+      "name": "Gershkov.opponent_expectation_on_support",
+      "kind": "theorem",
+      "source": "Gershkov/Support.lean",
+      "line": 75
+    },
+    {
+      "name": "Gershkov.Transfers.ScalarIC",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 25
+    },
+    {
+      "name": "Gershkov.Transfers.AdjacentIC",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 29
+    },
+    {
+      "name": "Gershkov.Transfers.adjacent_of_ic",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 34
+    },
+    {
+      "name": "Gershkov.Transfers.monotone_of_ic",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 41
+    },
+    {
+      "name": "Gershkov.Transfers.coefficient",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 54
+    },
+    {
+      "name": "Gershkov.Transfers.coefficient_bounds",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 58
+    },
+    {
+      "name": "Gershkov.Transfers.coefficient_transfer_delta",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 72
+    },
+    {
+      "name": "Gershkov.Transfers.pair_bounds_of_adjacent",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 86
+    },
+    {
+      "name": "Gershkov.Transfers.ic_of_adjacent",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 117
+    },
+    {
+      "name": "Gershkov.Transfers.scalarIC_iff_monotone_adjacent",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 127
+    },
+    {
+      "name": "Gershkov.Transfers.edge",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 136
+    },
+    {
+      "name": "Gershkov.Transfers.transfer",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 141
+    },
+    {
+      "name": "Gershkov.Transfers.transfer_zero",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 145
+    },
+    {
+      "name": "Gershkov.Transfers.Iio_succ_eq_insert",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 152
+    },
+    {
+      "name": "Gershkov.Transfers.transfer_adjacent_delta",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 165
+    },
+    {
+      "name": "Gershkov.Transfers.constructed_transfer_ic",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 174
+    },
+    {
+      "name": "Gershkov.Transfers.mean",
+      "kind": "def",
+      "source": "Gershkov/Transfers.lean",
+      "line": 185
+    },
+    {
+      "name": "Gershkov.Transfers.mean_sub",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 187
+    },
+    {
+      "name": "Gershkov.Transfers.mean_mul",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 191
+    },
+    {
+      "name": "Gershkov.Transfers.mean_const",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 195
+    },
+    {
+      "name": "Gershkov.Transfers.constructed_transfer_mean",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 201
+    },
+    {
+      "name": "Gershkov.Transfers.modified_transfer_exists",
+      "kind": "theorem",
+      "source": "Gershkov/Transfers.lean",
+      "line": 221
+    },
+    {
+      "name": "GGKMS.value",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 18
+    },
+    {
+      "name": "GGKMS.Feasible",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 21
+    },
+    {
+      "name": "GGKMS.energy",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 24
+    },
+    {
+      "name": "GGKMS.Profile",
+      "kind": "abbrev",
+      "source": "Solution.lean",
+      "line": 35
+    },
+    {
+      "name": "GGKMS.Opponents",
+      "kind": "abbrev",
+      "source": "Solution.lean",
+      "line": 37
+    },
+    {
+      "name": "GGKMS.pack",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 39
+    },
+    {
+      "name": "GGKMS.joint",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 42
+    },
+    {
+      "name": "GGKMS.opponentMass",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 44
+    },
+    {
+      "name": "GGKMS.SupportPrior",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 47
+    },
+    {
+      "name": "GGKMS.interim",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 50
+    },
+    {
+      "name": "GGKMS.exAnte",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 53
+    },
+    {
+      "name": "GGKMS.slope",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 55
+    },
+    {
+      "name": "GGKMS.Matches",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 58
+    },
+    {
+      "name": "GGKMS.Types",
+      "kind": "abbrev",
+      "source": "Solution.lean",
+      "line": 70
+    },
+    {
+      "name": "GGKMS.modified",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 72
+    },
+    {
+      "name": "GGKMS.payoff",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 76
+    },
+    {
+      "name": "GGKMS.interimPayoff",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 81
+    },
+    {
+      "name": "GGKMS.BIC",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 86
+    },
+    {
+      "name": "GGKMS.DIC",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 90
+    },
+    {
+      "name": "GGKMS.modifiedInterim",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 94
+    },
+    {
+      "name": "GGKMS.socialSurplus",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 98
+    },
+    {
+      "name": "GGKMS.Transfers.ScalarIC",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 107
+    },
+    {
+      "name": "GGKMS.Transfers.AdjacentIC",
+      "kind": "def",
+      "source": "Solution.lean",
+      "line": 110
+    },
+    {
+      "name": "GGKMS.PositiveSupport",
+      "kind": "abbrev",
+      "source": "Solution.lean",
+      "line": 121
+    },
+    {
+      "name": "GGKMS.positiveSupportFintype",
+      "kind": "instance",
+      "source": "Solution.lean",
+      "line": 123
+    },
+    {
+      "name": "GGKMS.positiveSupportDecidableEq",
+      "kind": "instance",
+      "source": "Solution.lean",
+      "line": 126
+    },
+    {
+      "name": "GGKMS.finite_bayesian_dominant_equivalence",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 137
+    },
+    {
+      "name": "GGKMS.weighted_monotone_lifting",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 160
+    },
+    {
+      "name": "GGKMS.minimizer_monotone",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 176
+    },
+    {
+      "name": "GGKMS.Transfers.scalarIC_iff_monotone_adjacent",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 188
+    },
+    {
+      "name": "GGKMS.expectation_on_support",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 198
+    },
+    {
+      "name": "GGKMS.product_expectation_on_support",
+      "kind": "theorem",
+      "source": "Solution.lean",
+      "line": 209
+    }
+  ],
+  "sources_sha256": {
+    "Challenge.lean": "d81354d6c5b8b928f261b20e708dc503f6c540850b7deaf48899204b67120af9",
+    "Gershkov/Compactness.lean": "8c4b0f7ef3766850d16e2da33fe3ae62af0d6bca77119a9cb4f6d14aba7a1397",
+    "Gershkov/Equivalence.lean": "a70f03add72cd0d56b84568460ed2a341ddb09695d7c42657cdb111a6d03b620",
+    "Gershkov/Examples.lean": "36826b0e0f064d91437039d358bbf4b95951f0b408b4625d5d1f654f60471813",
+    "Gershkov/Lifting.lean": "8d6d4b877494de2e95c73432f9e11745b52f1d8f0a87cb460cfe59e851041c64",
+    "Gershkov/Mechanism.lean": "e4c2d4456e5bd05063f96bd610561dfff81e5fc4dce680c28b781f2ba742bfa6",
+    "Gershkov/Model.lean": "7f7b741a020d36bb4b8cb0084ee071da7dcd9c3b33f1a28b0597a70a56161523",
+    "Gershkov/Smoothing.lean": "7b1a4157bcb6b10023c10a008054dc3d2bbaab0992f1af24f32eaa1c8eef9b53",
+    "Gershkov/Support.lean": "3f120dd8fada000d65ebf1f46fe9c97f86344d6e8974b10c8c19550f01798b50",
+    "Gershkov/Transfers.lean": "99ba8b78bf932b7ed0542fcc35ef4d5b4e92d7b7206d6879b4e56058ef2d1597",
+    "Gershkov.lean": "b241b723bd9fcd3d20859f6719edbce4c0446a1292bbf6c3e4e80e6cf6f4a997",
+    "Solution.lean": "5ad7b50036780bb53f26b5a26a26e4d8ddc42025bdffa4a42ff7b24742bf899e"
+  }
+}
